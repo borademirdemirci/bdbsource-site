@@ -429,6 +429,11 @@
     }
 
     .submit-btn:hover{transform:translateY(-2px)}
+    .submit-btn:disabled{
+      opacity:.75;
+      cursor:not-allowed;
+      transform:none;
+    }
 
     .submit-note{
       color:var(--muted);
@@ -458,6 +463,13 @@
     }
 
     .form-note li+li{margin-top:6px}
+
+    .honeypot-wrap{
+      position:absolute;
+      left:-9999px;
+      opacity:0;
+      pointer-events:none;
+    }
 
     .cta{padding:10px 0 30px}
 
@@ -717,14 +729,26 @@
           <h2 class="section-title">Talebinizi form üzerinden iletin</h2>
           <p class="section-text">
             Aşağıdaki alanları doldurarak ürün veya teklif talebinizi iletebilirsiniz.
-            Bu formun aktif çalışması için sonradan bir form servisi veya backend bağlantısı eklenmelidir.
           </p>
 
-          <form class="quote-form" action="#" method="post">
+          <form
+            class="quote-form"
+            action="https://formspree.io/f/mzdjrjll"
+            method="POST"
+            id="quoteForm"
+          >
+            <input type="hidden" name="subject" value="BDB web sitesi teklif talebi">
+            <input type="hidden" name="_language" value="tr">
+
+            <div class="honeypot-wrap" aria-hidden="true">
+              <label for="website">Bu alanı boş bırakın</label>
+              <input id="website" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
             <div class="form-row">
               <div class="field">
                 <label for="name">Ad Soyad</label>
-                <input id="name" name="name" type="text" placeholder="Adınız soyadınız">
+                <input id="name" name="name" type="text" placeholder="Adınız soyadınız" required>
               </div>
               <div class="field">
                 <label for="company">Firma Adı</label>
@@ -735,7 +759,7 @@
             <div class="form-row">
               <div class="field">
                 <label for="phone">Telefon</label>
-                <input id="phone" name="phone" type="tel" placeholder="05xx xxx xx xx">
+                <input id="phone" name="phone" type="tel" placeholder="05xx xxx xx xx" required>
               </div>
               <div class="field">
                 <label for="email">E-posta</label>
@@ -746,7 +770,7 @@
             <div class="form-row">
               <div class="field">
                 <label for="product">Ürün / Ürün Grubu</label>
-                <input id="product" name="product" type="text" placeholder="Örn: nitril eldiven, koli bandı">
+                <input id="product" name="product" type="text" placeholder="Örn: nitril eldiven, koli bandı" required>
               </div>
               <div class="field">
                 <label for="city">Bölge / Teslimat Yeri</label>
@@ -763,22 +787,22 @@
                 <label for="frequency">Talep Tipi</label>
                 <select id="frequency" name="frequency">
                   <option value="">Seçiniz</option>
-                  <option>Tek seferlik talep</option>
-                  <option>Düzenli tedarik talebi</option>
-                  <option>Fiyat araştırması</option>
+                  <option value="Tek seferlik talep">Tek seferlik talep</option>
+                  <option value="Düzenli tedarik talebi">Düzenli tedarik talebi</option>
+                  <option value="Fiyat araştırması">Fiyat araştırması</option>
                 </select>
               </div>
             </div>
 
             <div class="field">
               <label for="message">Talep Detayı</label>
-              <textarea id="message" name="message" placeholder="İhtiyacınız olan ürün, kullanım alanı veya ek notlarınızı yazabilirsiniz."></textarea>
+              <textarea id="message" name="message" placeholder="İhtiyacınız olan ürün, kullanım alanı veya ek notlarınızı yazabilirsiniz." required></textarea>
             </div>
 
             <div class="form-submit">
-              <button class="submit-btn" type="submit">Talebi Gönder</button>
+              <button class="submit-btn" id="submitBtn" type="submit">Talebi Gönder</button>
               <div class="submit-note">
-                Form entegrasyonu eklenene kadar en hızlı yöntem WhatsApp veya telefon iletişimidir.
+                Formu gönderdikten sonra talebiniz e-posta olarak size ulaşacaktır.
               </div>
             </div>
           </form>
@@ -860,5 +884,17 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const quoteForm = document.getElementById("quoteForm");
+    const submitBtn = document.getElementById("submitBtn");
+
+    if (quoteForm && submitBtn) {
+      quoteForm.addEventListener("submit", function () {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Gönderiliyor...";
+      });
+    }
+  </script>
 </body>
 </html>
