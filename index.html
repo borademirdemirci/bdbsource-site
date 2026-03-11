@@ -15,27 +15,19 @@
       --line: #d9e2ea;
       --blue: #1699df;
       --blue-dark: #24435f;
-      --blue-soft: #4d6885;
       --max: 1180px;
       --shadow: 0 8px 24px rgba(20, 42, 64, 0.06);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
     }
-
     a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
-    }
+    .container { width: min(100% - 32px, var(--max)); margin: 0 auto; }
 
     .top-stripe {
       width: min(100% - 32px, var(--max));
@@ -44,10 +36,7 @@
       background: linear-gradient(90deg, #1cb0eb 0 16%, #7fdcf6 16% 30%, #1cb0eb 30% 45%, #7fdcf6 45% 60%, #1cb0eb 60% 78%, #7fdcf6 78% 100%);
     }
 
-    .header {
-      padding: 22px 0 18px;
-    }
-
+    .header { padding: 22px 0 18px; }
     .header-box {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -59,18 +48,8 @@
       gap: 18px;
     }
 
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      min-height: 74px;
-    }
-
-    .logo-image {
-      display: block;
-      height: 96px;
-      width: auto;
-      object-fit: contain;
-    }
+    .logo-wrap { display: flex; align-items: center; min-height: 74px; }
+    .logo-image { display: block; height: 96px; width: auto; object-fit: contain; }
 
     .nav {
       display: flex;
@@ -80,16 +59,8 @@
       font-size: 0.96rem;
       font-weight: 700;
     }
-
-    .nav a {
-      padding-bottom: 6px;
-      border-bottom: 3px solid transparent;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      border-color: var(--blue-dark);
-    }
+    .nav a { padding-bottom: 6px; border-bottom: 3px solid transparent; }
+    .nav a:hover, .nav a.active { border-color: var(--blue-dark); }
 
     .header-note {
       justify-self: end;
@@ -99,17 +70,13 @@
       text-transform: uppercase;
     }
 
-    .hero {
-      padding: 8px 0 20px;
-    }
-
+    .hero { padding: 8px 0 20px; }
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.78fr;
       gap: 16px;
       align-items: stretch;
     }
-
     .hero-main {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -118,7 +85,6 @@
       position: relative;
       min-height: 440px;
     }
-
     .hero-main::before {
       content: "";
       position: absolute;
@@ -147,7 +113,6 @@
       letter-spacing: -0.04em;
       max-width: 8ch;
     }
-
     .hero-main p {
       margin: 0;
       max-width: 34ch;
@@ -155,14 +120,12 @@
       line-height: 1.75;
       font-size: 1rem;
     }
-
     .hero-actions {
       display: flex;
       gap: 12px;
       margin-top: 28px;
       flex-wrap: wrap;
     }
-
     .button {
       display: inline-flex;
       align-items: center;
@@ -176,7 +139,6 @@
       text-transform: uppercase;
       font-size: 0.9rem;
     }
-
     .button.primary {
       background: var(--blue-dark);
       border-color: var(--blue-dark);
@@ -188,7 +150,6 @@
       grid-template-rows: 1fr auto;
       gap: 14px;
     }
-
     .visual {
       background: linear-gradient(145deg, #3b5875, #516e8b 54%, #3e5772);
       border: 1px solid rgba(0,0,0,0.06);
@@ -197,21 +158,13 @@
       position: relative;
       overflow: hidden;
     }
-
-    .visual::before,
-    .visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-    }
-
+    .visual::before, .visual::after { content: ""; position: absolute; inset: 0; }
     .visual::before {
       background:
         linear-gradient(32deg, transparent 0 34%, rgba(255,255,255,0.18) 34% 37%, transparent 37%),
         linear-gradient(126deg, transparent 0 54%, rgba(255,255,255,0.16) 54% 58%, transparent 58%),
         linear-gradient(148deg, transparent 0 62%, rgba(0,0,0,0.12) 62% 66%, transparent 66%);
     }
-
     .visual::after {
       width: 58%;
       height: 56%;
@@ -223,7 +176,6 @@
       border: 1px solid rgba(255,255,255,0.18);
       box-shadow: 0 16px 34px rgba(0,0,0,0.12);
     }
-
     .visual-label {
       position: absolute;
       left: 22px;
@@ -243,37 +195,30 @@
       box-shadow: var(--shadow);
       padding: 24px 22px;
     }
-
     .side-card h2 {
       margin: 0 0 10px;
       font-size: 1.3rem;
       letter-spacing: 0.03em;
       text-transform: uppercase;
     }
-
     .side-card p {
       margin: 0;
       color: var(--muted);
       line-height: 1.7;
     }
 
-    .cards {
-      padding: 0 0 18px;
-    }
-
+    .cards { padding: 0 0 18px; }
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
-
     .card {
       background: var(--surface);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
       padding: 24px 22px;
     }
-
     .card-no {
       color: var(--blue);
       font-size: 0.82rem;
@@ -281,99 +226,9 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 1.55rem;
-    }
-
-    .card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .card a {
-      font-weight: 700;
-      color: var(--blue-dark);
-    }
-
-    .section {
-      padding: 8px 0 18px;
-    }
-
-    .section-box {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      padding: 30px 28px;
-    }
-
-    .section-title {
-      margin: 0 0 16px;
-      font-size: 1.7rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-    }
-
-    .section-text {
-      margin: 0;
-      max-width: 64ch;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .product-item {
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
-      padding: 22px 18px;
-    }
-
-    .product-item h4 {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-    }
-
-    .product-item p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.96rem;
-    }
-
-    .contact-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .contact-box {
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
-      padding: 22px 18px;
-    }
-
-    .contact-box strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .contact-box a,
-    .contact-box span {
-      color: var(--blue-dark);
-      font-weight: 700;
-    }
+    .card h3 { margin: 0 0 10px; font-size: 1.55rem; }
+    .card p { margin: 0 0 14px; color: var(--muted); line-height: 1.7; }
+    .card a { font-weight: 700; color: var(--blue-dark); }
 
     .footer {
       margin-top: 10px;
@@ -389,18 +244,8 @@
         grid-template-columns: 1fr;
         text-align: center;
       }
-
-      .logo-wrap,
-      .header-note {
-        justify-self: center;
-      }
-
-      .hero-grid,
-      .cards-grid,
-      .product-grid,
-      .contact-row {
-        grid-template-columns: 1fr;
-      }
+      .logo-wrap, .header-note { justify-self: center; }
+      .hero-grid, .cards-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -409,33 +254,31 @@
 
   <header class="header">
     <div class="container header-box">
-      <a href="#anasayfa" class="logo-wrap">
+      <a href="index.html" class="logo-wrap">
         <img class="logo-image" src="logo-bdb.png" alt="BDB logo" />
       </a>
 
       <nav class="nav">
-        <a class="active" href="#anasayfa">Ana Sayfa</a>
-        <a href="#kurumsal">Kurumsal</a>
-        <a href="#urunler">Ürünler</a>
-        <a href="#iletisim">İletişim</a>
+        <a class="active" href="index.html">Ana Sayfa</a>
+        <a href="kurumsal.html">Kurumsal</a>
+        <a href="urunler.html">Ürünler</a>
+        <a href="iletisim.html">İletişim</a>
       </nav>
 
-      <div class="header-note">bdbsource.com.tr</div>
+      <div class="header-note">BDBSOURCE.COM.TR</div>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="anasayfa">
+    <section class="hero">
       <div class="container hero-grid">
         <div class="hero-main">
           <div class="hero-kicker">BDB</div>
           <h1>Kurumsal ürün tedariki.</h1>
-          <p>
-            Ambalaj, hijyen ve operasyonel sarf gruplarında sade ve güven veren bir kurumsal sunum.
-          </p>
+          <p>Ambalaj, hijyen ve operasyonel sarf gruplarında sade ve güven veren bir kurumsal sunum.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#urunler">Ürünler</a>
-            <a class="button" href="#iletisim">İletişim</a>
+            <a class="button primary" href="urunler.html">Ürünler</a>
+            <a class="button" href="iletisim.html">İletişim</a>
           </div>
         </div>
 
@@ -457,71 +300,20 @@
           <div class="card-no">01</div>
           <h3>Kurumsal</h3>
           <p>Kısa şirket bilgisi için ayrılmış temiz bir alan.</p>
-          <a href="#kurumsal">Devamı</a>
+          <a href="kurumsal.html">Devamı</a>
         </article>
         <article class="card">
           <div class="card-no">02</div>
           <h3>Ürünler</h3>
           <p>Genel ürün gruplarını gösteren sade ürün alanı.</p>
-          <a href="#urunler">Devamı</a>
+          <a href="urunler.html">Devamı</a>
         </article>
         <article class="card">
           <div class="card-no">03</div>
           <h3>İletişim</h3>
           <p>Mail ve teklif bilgilerini gösteren iletişim alanı.</p>
-          <a href="#iletisim">Devamı</a>
+          <a href="iletisim.html">Devamı</a>
         </article>
-      </div>
-    </section>
-
-    <section class="section" id="kurumsal">
-      <div class="container section-box">
-        <h2 class="section-title">Kurumsal</h2>
-        <p class="section-text">
-          BDB, kurumsal müşterilere yönelik ürün tedariki sağlayan bir yapıdır. Ana yaklaşım; net iletişim, düzenli süreç ve güven veren sunumdur.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="urunler">
-      <div class="container section-box">
-        <h2 class="section-title">Ürünler</h2>
-        <p class="section-text">
-          Ürünler tek tek listelenmeden, genel ürün grupları halinde sunulmaktadır.
-        </p>
-        <div class="product-grid">
-          <div class="product-item">
-            <h4>Hijyen ve koruyucu ürünler</h4>
-            <p>Kurumsal kullanım için genel hijyen ve koruyucu ekipman grupları.</p>
-          </div>
-          <div class="product-item">
-            <h4>Ambalaj ve paketleme ürünleri</h4>
-            <p>Paketleme, koruma ve sevkiyat süreçlerinde kullanılan ürün grupları.</p>
-          </div>
-          <div class="product-item">
-            <h4>Operasyonel sarf malzemeleri</h4>
-            <p>Günlük iş akışında kullanılan destekleyici tüketim ürünleri.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="iletisim">
-      <div class="container section-box">
-        <h2 class="section-title">İletişim</h2>
-        <p class="section-text">
-          Bilgi ve teklif talepleriniz için bizimle iletişime geçebilirsiniz.
-        </p>
-        <div class="contact-row">
-          <div class="contact-box">
-            <strong>E-posta</strong>
-            <a href="mailto:info@bdbsource.com.tr">info@bdbsource.com.tr</a>
-          </div>
-          <div class="contact-box">
-            <strong>Talep</strong>
-            <span>Ürün bilgisi ve fiyat talebi</span>
-          </div>
-        </div>
       </div>
     </section>
   </main>
