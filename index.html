@@ -6,8 +6,8 @@
   <link rel="apple-touch-icon" href="/favicon-logo-only.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BDB | Kurumsal Tedarik Çözümleri</title>
-  <meta name="description" content="BDB; ambalaj, hijyen ve operasyonel sarf ürün gruplarında işletmelere yönelik kurumsal tedarik çözümleri sunar." />
+  <title>BDB | Fabrikalar İçin Ambalaj ve Sarf Tedariki</title>
+  <meta name="description" content="BDB, İzmir merkezli işletmelere ve fabrikalara ambalaj, koruyucu ürünler ve operasyonel sarf malzemelerinde hızlı teklif, uygun fiyat ve düzenli tedarik desteği sunar." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +41,7 @@
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
     .container{width:min(100% - 32px,var(--max));margin:0 auto}
+
     .header{
       position:sticky;top:0;z-index:30;
       padding:20px 0 12px;
@@ -104,14 +105,14 @@
     }
     h1{
       margin:0 0 18px;
-      max-width:9ch;
+      max-width:11ch;
       font-family:"Playfair Display",Georgia,serif;
-      font-size:clamp(3rem,6vw,5.2rem);
+      font-size:clamp(3rem,6vw,5rem);
       line-height:.96;letter-spacing:-.05em;
     }
     .hero p{
       margin:0;
-      max-width:54ch;
+      max-width:60ch;
       color:rgba(255,255,255,.85);
       font-size:1.05rem;line-height:1.9;
     }
@@ -127,9 +128,7 @@
     .button:hover{transform:translateY(-2px)}
     .button.primary{background:var(--blue);border-color:var(--blue)}
 
-    .hero-side{
-      display:grid;gap:16px;
-    }
+    .hero-side{display:grid;gap:16px}
     .side-card{
       border-radius:24px;
       padding:24px;
@@ -174,12 +173,12 @@
       font-family:"Playfair Display",Georgia,serif;
     }
     .section-text{
-      margin:0;max-width:64ch;color:var(--muted);
+      margin:0;max-width:70ch;color:var(--muted);
       font-size:1.02rem;line-height:1.8;
     }
 
     .intro-layout{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start;
+      display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:start;
     }
     .intro-panel{
       background:var(--surface);
@@ -188,9 +187,21 @@
       padding:30px;
       box-shadow:var(--shadow-soft);
     }
-    .process{
-      display:grid;gap:14px;
+    .trust-points{
+      display:flex;flex-wrap:wrap;gap:10px;
+      margin-top:22px;
     }
+    .trust-points span{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(23,152,222,.08);
+      color:var(--blue-dark);
+      font-size:.9rem;
+      font-weight:700;
+      border:1px solid rgba(23,152,222,.12);
+    }
+
+    .process{display:grid;gap:14px}
     .process-item{
       display:grid;grid-template-columns:48px 1fr;gap:14px;
       align-items:start;
@@ -227,11 +238,18 @@
     }
     .category h3{margin:0 0 12px;font-size:1.18rem;line-height:1.35}
     .category p{margin:0 0 16px;color:var(--muted);line-height:1.8;font-size:.96rem}
+    .category-list{
+      margin:0 0 18px;
+      padding-left:18px;
+      color:var(--muted);
+      display:grid;
+      gap:8px;
+      font-size:.94rem;
+      line-height:1.6;
+    }
     .category a{color:var(--blue-dark);font-weight:800;font-size:.95rem}
 
-    .cta{
-      padding:12px 0 30px;
-    }
+    .cta{padding:12px 0 30px}
     .cta-box{
       display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
       padding:34px;border-radius:28px;color:#fff;
@@ -276,7 +294,7 @@
       .header{position:static}
       .hero-box{padding:34px 22px;border-radius:24px}
       .feature-list{grid-template-columns:1fr}
-      h1{max-width:11ch}
+      h1{max-width:12ch}
       .cta-box,.footer-box{padding:22px}
     }
   </style>
@@ -293,7 +311,7 @@
         <a href="/urunler/">Ürünler</a>
         <a href="/iletisim/">İletişim</a>
       </nav>
-      <div class="header-note">bdbsource.com.tr</div>
+      <div class="header-note">İzmir merkezli tedarik</div>
     </div>
   </header>
 
@@ -301,42 +319,44 @@
     <section class="hero">
       <div class="container hero-box">
         <div class="hero-content">
-          <div class="eyebrow">BDB Kurumsal Tedarik</div>
-          <h1>Kurumsal tedarikte güvenilir çözüm ortağınız.</h1>
+          <div class="eyebrow">BDB Tedarik Desteği</div>
+          <h1>Fabrikalar için düzenli ve uygun maliyetli ürün tedariki.</h1>
           <p>
-            Ambalaj, hijyen ve operasyonel sarf ürün gruplarında işletmelere yönelik
-            düzenli, profesyonel ve ihtiyaç odaklı tedarik desteği sunuyoruz.
+            Ambalaj, koruyucu ürünler ve operasyonel sarf malzemelerinde
+            ihtiyaçlarınıza uygun çözümler sunuyoruz. Hızlı teklif, uygun fiyat
+            ve düzenli tedarik desteğiyle işletmenizin tekrar eden ihtiyaçlarını
+            pratik şekilde yönetmenize yardımcı oluyoruz.
           </p>
           <div class="actions">
-            <a class="button primary" href="/iletisim/">Teklif Talep Et</a>
-            <a class="button" href="/urunler/">Ürün Grupları</a>
+            <a class="button primary" href="/iletisim/">Teklif Al</a>
+            <a class="button" href="/urunler/">Ürünleri İncele</a>
           </div>
         </div>
 
         <div class="hero-side">
           <div class="side-card">
-            <h2>İşletmeniz için doğru ürün, doğru süreç</h2>
+            <h2>Doğru ürünü bulmayı ve tedarik sürecini kolaylaştırıyoruz</h2>
             <p>
-              İhtiyacınıza uygun ürün gruplarını belirliyor, teklif ve tedarik sürecini
-              planlı ve güvenilir bir yapıda yönetiyoruz.
+              Üreticilerden temin edilen ürün grupları arasından ihtiyacınıza uygun
+              seçenekleri değerlendiriyor, fiyat ve tedarik sürecini açık ve hızlı şekilde yönetiyoruz.
             </p>
           </div>
           <div class="feature-list">
             <div class="feature-mini">
-              <strong>Ambalaj</strong>
-              <span>Paketleme ve sevkiyat süreçlerine uygun ürün grupları.</span>
+              <strong>Uygun fiyat</strong>
+              <span>İhtiyacınıza göre fiyat ve ürün alternatifi sunuyoruz.</span>
             </div>
             <div class="feature-mini">
-              <strong>Hijyen</strong>
-              <span>Kurumsal kullanım için hijyen ve koruyucu ürün çözümleri.</span>
+              <strong>Düzenli tedarik</strong>
+              <span>Tek seferlik değil, tekrar eden ihtiyaçlar için sürdürülebilir destek.</span>
             </div>
             <div class="feature-mini">
-              <strong>Operasyonel Sarf</strong>
-              <span>Günlük iş akışını destekleyen temel tüketim ürünleri.</span>
+              <strong>Hızlı geri dönüş</strong>
+              <span>Telefon, WhatsApp ve e-posta üzerinden hızlı iletişim.</span>
             </div>
             <div class="feature-mini">
-              <strong>Teklif Desteği</strong>
-              <span>Talebe uygun hızlı bilgi ve fiyatlandırma süreci.</span>
+              <strong>İşletmeye uygun ürün</strong>
+              <span>Kullanım alanınıza göre doğru ürün grubuna yönlendirme.</span>
             </div>
           </div>
         </div>
@@ -346,16 +366,16 @@
     <section class="strip">
       <div class="container strip-grid">
         <div class="strip-item">
-          <strong>Kurumsal yaklaşım</strong>
-          <span>İhtiyaca odaklanan profesyonel ve düzenli hizmet anlayışı.</span>
+          <strong>Fabrika ve işletme odaklı ürünler</strong>
+          <span>Üretim, paketleme, sevkiyat ve günlük operasyonlarda kullanılan temel ürün grupları.</span>
         </div>
         <div class="strip-item">
-          <strong>Net süreç yönetimi</strong>
-          <span>Talep, teklif ve tedarik adımlarında planlı ilerleme.</span>
+          <strong>Alternatifli teklif yaklaşımı</strong>
+          <span>İhtiyacınıza göre ürün, kalite ve fiyat seçeneklerini birlikte değerlendiriyoruz.</span>
         </div>
         <div class="strip-item">
-          <strong>Hızlı iletişim</strong>
-          <span>Telefon, WhatsApp ve e-posta üzerinden etkin geri dönüş.</span>
+          <strong>İzmir ve yakın bölgelere destek</strong>
+          <span>İzmir merkezli yapımızla talepleri hızlı şekilde karşılamaya odaklanıyoruz.</span>
         </div>
       </div>
     </section>
@@ -364,12 +384,19 @@
       <div class="container intro-layout">
         <div class="intro-panel">
           <div class="section-head">
-            <div class="section-kicker">Çalışma Şeklimiz</div>
-            <h2 class="section-title">Tedarik sürecini planlı ve verimli şekilde yönetiyoruz</h2>
+            <div class="section-kicker">Nasıl Çalışıyoruz</div>
+            <h2 class="section-title">Tekrar eden ürün ihtiyaçlarında hızlı ve net ilerliyoruz</h2>
             <p class="section-text">
-              Ürün seçimi ve teklif aşamasından iletişim sürecine kadar her adımı
-              kurumsal beklentilere uygun şekilde ele alıyoruz.
+              Özellikle fabrikaların ve işletmelerin düzenli ihtiyaç duyduğu ürün gruplarında,
+              talebi anlayıp uygun ürünleri belirliyor ve teklif sürecini zaman kaybetmeden yönetiyoruz.
             </p>
+          </div>
+
+          <div class="trust-points">
+            <span>İzmir merkezli</span>
+            <span>Uygun fiyat odaklı</span>
+            <span>Düzenli tedarik desteği</span>
+            <span>Hızlı teklif süreci</span>
           </div>
         </div>
 
@@ -377,22 +404,29 @@
           <div class="process-item">
             <div class="num">01</div>
             <div>
-              <h3>Talebin alınması</h3>
-              <p>İhtiyacınız olan ürün grubu ve beklentileriniz net şekilde belirlenir.</p>
+              <h3>İhtiyacın netleştirilmesi</h3>
+              <p>Kullanım alanı, ürün tipi ve talep miktarı belirlenerek doğru ürün grubu seçilir.</p>
             </div>
           </div>
           <div class="process-item">
             <div class="num">02</div>
             <div>
-              <h3>Uygun ürünlerin değerlendirilmesi</h3>
-              <p>Talebinize uygun ürün grupları ve çözüm seçenekleri belirlenir.</p>
+              <h3>Uygun ürün ve alternatiflerin sunulması</h3>
+              <p>Talebinize uygun ürünler değerlendirilir, gerekiyorsa farklı fiyat ve kalite alternatifleri hazırlanır.</p>
             </div>
           </div>
           <div class="process-item">
             <div class="num">03</div>
             <div>
-              <h3>Teklif ve bilgilendirme</h3>
-              <p>Ürün ve fiyat bilgileri açık, anlaşılır ve düzenli şekilde sunulur.</p>
+              <h3>Teklif paylaşımı</h3>
+              <p>Ürün ve fiyat bilgileri anlaşılır şekilde iletilir, ihtiyaç duyulan detaylar hızlıca netleştirilir.</p>
+            </div>
+          </div>
+          <div class="process-item">
+            <div class="num">04</div>
+            <div>
+              <h3>Tedarik planının yürütülmesi</h3>
+              <p>Onaylanan taleplerde süreci takip ederek düzenli ve pratik bir tedarik akışı oluşturulur.</p>
             </div>
           </div>
         </div>
@@ -403,33 +437,55 @@
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Ürün Grupları</div>
-          <h2 class="section-title">Kurumsal ihtiyaçlara yönelik temel ürün başlıkları</h2>
+          <h2 class="section-title">İşletmelerin günlük operasyonlarında kullanılan temel ürünler</h2>
           <p class="section-text">
-            İşletmelerin günlük operasyonlarında ihtiyaç duyduğu ürün gruplarını sade,
-            anlaşılır ve kurumsal bir yapı içinde sunuyoruz.
+            Koruyucu ürünlerden ambalaj ve sevkiyat malzemelerine kadar farklı ihtiyaçlara yönelik
+            ürün grupları sunuyoruz. Aşağıdaki liste örnek ürünleri içerir.
           </p>
         </div>
 
         <div class="category-grid">
           <article class="category">
             <div class="category-badge">01</div>
-            <h3>Hijyen ve koruyucu ürünler</h3>
-            <p>İşletmelerin çalışma alanlarında ihtiyaç duyduğu hijyen ve koruyucu ürün çözümleri.</p>
-            <a href="/urunler/">Detayları İncele</a>
+            <h3>Koruyucu ve hijyen ürünleri</h3>
+            <p>Üretim alanı, paketleme hattı ve personel kullanımı için ihtiyaç duyulan tek kullanımlık ve koruyucu ürünler.</p>
+            <ul class="category-list">
+              <li>Tek kullanımlık nitril eldiven</li>
+              <li>İş eldivenleri</li>
+              <li>Suya dayanıklı fileto eldiven</li>
+              <li>Tek kullanımlık bone ve sakal bonesi</li>
+              <li>Tek kullanımlık maske</li>
+              <li>Tela kolluk, naylon önlük ve çizme galoş</li>
+            </ul>
+            <a href="/urunler/">Tüm ürünleri incele</a>
           </article>
 
           <article class="category">
             <div class="category-badge">02</div>
             <h3>Ambalaj ve paketleme ürünleri</h3>
-            <p>Paketleme, koruma ve sevkiyat süreçlerinde kullanılan temel ambalaj ürün grupları.</p>
-            <a href="/urunler/">Detayları İncele</a>
+            <p>Sevkiyat, koruma, paketleme ve günlük kullanım için ihtiyaç duyulan ambalaj ürün grupları.</p>
+            <ul class="category-list">
+              <li>Koli bandı</li>
+              <li>El tipi streç film</li>
+              <li>Naylon poşet</li>
+              <li>Vakum poşet</li>
+              <li>Karton koli</li>
+              <li>Plas kâğıt ve köşebent</li>
+            </ul>
+            <a href="/urunler/">Tüm ürünleri incele</a>
           </article>
 
           <article class="category">
             <div class="category-badge">03</div>
-            <h3>Operasyonel sarf malzemeleri</h3>
-            <p>Günlük iş akışını destekleyen, düzenli tedarik gerektiren yardımcı tüketim ürünleri.</p>
-            <a href="/urunler/">Detayları İncele</a>
+            <h3>Sevkiyat ve operasyonel sarf ürünleri</h3>
+            <p>Depolama, taşıma ve operasyon akışında kullanılan yardımcı ürünler ve sarf malzemeleri.</p>
+            <ul class="category-list">
+              <li>Jel buz</li>
+              <li>Tahta palet</li>
+              <li>EPAL palet</li>
+              <li>Düzenli kullanım için tekrar siparişe uygun ürün grupları</li>
+            </ul>
+            <a href="/urunler/">Tüm ürünleri incele</a>
           </article>
         </div>
       </div>
@@ -439,8 +495,11 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>Ürün bilgisi ve fiyat teklifi için bizimle iletişime geçin</h2>
-            <p>İhtiyacınıza uygun ürün grubu hakkında bilgi almak veya teklif talebinde bulunmak için bize doğrudan ulaşabilirsiniz.</p>
+            <h2>İhtiyacınıza uygun ürün ve fiyat teklifi için bize ulaşın</h2>
+            <p>
+              Kullanım alanınızı ve ihtiyaç duyduğunuz ürünleri iletin, size uygun ürün grupları
+              ve fiyat seçenekleriyle hızlı şekilde dönüş yapalım.
+            </p>
           </div>
           <div class="actions">
             <a class="button primary" href="tel:+905327889759">Hemen Ara</a>
@@ -456,9 +515,15 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>BDB</h3>
-          <p>Ambalaj, hijyen ve operasyonel sarf ürün gruplarında işletmelere yönelik kurumsal tedarik çözümleri sunar.</p>
-          <p style="margin-top:12px;">İzmir / Güzelbahçe merkezli iletişim ve destek yapısı.</p>
+          <p>
+            BDB, BDB Ticaret tarafından kullanılan marka adıdır. İzmir merkezli olarak
+            ambalaj, koruyucu ürünler ve operasyonel sarf malzemelerinde işletmelere tedarik desteği sunar.
+          </p>
+          <p style="margin-top:12px;">
+            Özellikle düzenli ürün ihtiyacı olan işletmeler için hızlı teklif, uygun fiyat ve ulaşılabilir iletişim odaklı çalışıyoruz.
+          </p>
         </div>
+
         <div class="footer-column">
           <strong>Sayfalar</strong>
           <div class="footer-links">
@@ -468,19 +533,21 @@
             <a href="/iletisim/">İletişim</a>
           </div>
         </div>
+
         <div class="footer-column">
           <strong>İletişim</strong>
           <div class="footer-links">
             <a href="mailto:info@bdbsource.com.tr">info@bdbsource.com.tr</a>
             <a href="tel:+905327889759">Telefon: 0532 788 97 59</a>
             <a href="https://wa.me/905379956261" target="_blank" rel="noopener">WhatsApp: 0537 995 62 61</a>
-            <p>Adres: İzmir / Güzelbahçe</p>
+            <p>Bölge: İzmir ve yakın çevre</p>
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
         <span>© 2026 bdbsource.com.tr</span>
-        <span>Kurumsal Tedarik Çözümleri</span>
+        <span>Ambalaj ve Sarf Tedariki</span>
       </div>
     </div>
   </footer>
