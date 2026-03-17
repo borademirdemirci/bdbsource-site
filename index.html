@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BDB</title>
+  <title>BDB | Tedarik Desteği</title>
   <meta name="description" content="BDB tedarik desteği" />
 
-  <link rel="icon" type="image/x-icon" href="/favicon-logo-only.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-logo-only.png">
-  <link rel="apple-touch-icon" href="/favicon-logo-only.png">
+  <link rel="icon" type="image/png" href="/BDBLOGO.png">
+  <link rel="apple-touch-icon" href="/BDBLOGO.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,17 +15,20 @@
 
   <style>
     :root{
-      --bg:#0f0f10;
-      --bg-soft:#151516;
-      --panel:#1b1b1d;
-      --panel-2:#211d1a;
-      --text:#f3f1ee;
-      --muted:#aaa39c;
-      --line:#2b2622;
-      --line-soft:#332b25;
-      --copper:#b77945;
-      --copper-soft:#d3a06f;
-      --copper-deep:#6f4828;
+      --bg:#ffffff;
+      --bg-soft:#f5f7fb;
+      --panel:#ffffff;
+      --panel-2:#f8fafc;
+      --text:#233a63;
+      --text-strong:#162947;
+      --muted:#66758f;
+      --line:#dbe3ef;
+      --line-soft:#c8d4e5;
+      --navy:#2c436c;
+      --navy-soft:#385483;
+      --green:#9fbe77;
+      --green-deep:#89a965;
+      --shadow:0 10px 35px rgba(35,58,99,.08);
       --max:1200px;
       --radius:28px;
     }
@@ -38,9 +40,9 @@
       font-family:"Inter", Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top right, rgba(183,121,69,.10), transparent 18%),
-        radial-gradient(circle at left top, rgba(183,121,69,.06), transparent 22%),
-        linear-gradient(180deg,#0f0f10 0%, #141415 100%);
+        radial-gradient(circle at top right, rgba(159,190,119,.12), transparent 20%),
+        radial-gradient(circle at left top, rgba(44,67,108,.06), transparent 20%),
+        linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
     }
 
     a{text-decoration:none;color:inherit}
@@ -51,13 +53,13 @@
       position:sticky;
       top:0;
       z-index:20;
-      background:rgba(15,15,16,.84);
+      background:rgba(255,255,255,.88);
       backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(183,121,69,.12);
+      border-bottom:1px solid rgba(44,67,108,.10);
     }
 
     .header-inner{
-      min-height:84px;
+      min-height:88px;
       display:grid;
       grid-template-columns:220px 1fr 170px;
       gap:20px;
@@ -71,7 +73,7 @@
     }
 
     .logo img{
-      height:70px;
+      height:72px;
       width:auto;
       object-fit:contain;
     }
@@ -86,13 +88,26 @@
     .nav a{
       color:var(--muted);
       font-size:.95rem;
-      font-weight:600;
+      font-weight:700;
       transition:.2s ease;
+      position:relative;
     }
 
     .nav a:hover,
     .nav a.active{
-      color:var(--text);
+      color:var(--navy);
+    }
+
+    .nav a.active::after,
+    .nav a:hover::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:100%;
+      height:3px;
+      border-radius:999px;
+      background:var(--green);
     }
 
     .top-btn{
@@ -100,17 +115,23 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:46px;
+      min-height:48px;
       padding:0 18px;
-      border-radius:12px;
-      background:linear-gradient(135deg,var(--copper-soft),var(--copper));
-      color:#111;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--navy-soft),var(--navy));
+      color:#fff;
       font-size:.92rem;
       font-weight:800;
+      box-shadow:var(--shadow);
+      transition:.2s ease;
+    }
+
+    .top-btn:hover{
+      transform:translateY(-1px);
     }
 
     .hero{
-      padding:28px 0 24px;
+      padding:32px 0 24px;
     }
 
     .hero-box{
@@ -118,8 +139,9 @@
       border-radius:34px;
       overflow:hidden;
       background:
-        linear-gradient(135deg, rgba(183,121,69,.08), transparent 28%),
-        linear-gradient(180deg,#171718 0%, #111112 100%);
+        linear-gradient(135deg, rgba(44,67,108,.04), transparent 28%),
+        linear-gradient(180deg,#ffffff 0%, #f9fbff 100%);
+      box-shadow:var(--shadow);
     }
 
     .hero-grid{
@@ -138,7 +160,7 @@
     }
 
     .eyebrow{
-      color:var(--copper-soft);
+      color:var(--green-deep);
       font-size:.82rem;
       font-weight:800;
       letter-spacing:.14em;
@@ -152,13 +174,14 @@
       font-size:clamp(3.2rem,6vw,6rem);
       line-height:.9;
       letter-spacing:-.08em;
+      color:var(--text-strong);
     }
 
     .hero-sub{
       margin:18px 0 0;
-      max-width:28ch;
+      max-width:30ch;
       color:var(--muted);
-      font-size:1.02rem;
+      font-size:1.04rem;
       line-height:1.85;
     }
 
@@ -173,8 +196,8 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width:160px;
-      min-height:52px;
+      min-width:170px;
+      min-height:54px;
       padding:0 20px;
       border-radius:14px;
       font-size:.94rem;
@@ -182,15 +205,20 @@
       transition:.2s ease;
     }
 
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
     .btn-primary{
-      background:linear-gradient(135deg,var(--copper-soft),var(--copper));
-      color:#111;
+      background:linear-gradient(135deg,var(--navy-soft),var(--navy));
+      color:#fff;
+      box-shadow:var(--shadow);
     }
 
     .btn-secondary{
       border:1px solid var(--line-soft);
-      color:var(--text);
-      background:transparent;
+      color:var(--navy);
+      background:#fff;
     }
 
     .hero-bottom{
@@ -210,7 +238,7 @@
     .hero-bottom strong{
       display:block;
       margin-bottom:6px;
-      color:var(--text);
+      color:var(--text-strong);
       font-size:.94rem;
     }
 
@@ -218,6 +246,7 @@
       padding:0;
       display:grid;
       grid-template-rows:1fr 1fr 1fr;
+      background:var(--panel-2);
     }
 
     .link-block{
@@ -229,7 +258,7 @@
       padding:34px;
       border-bottom:1px solid var(--line);
       transition:.2s ease;
-      background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,0));
+      background:linear-gradient(180deg, rgba(255,255,255,.8), rgba(245,247,251,.9));
     }
 
     .link-block:last-child{
@@ -238,14 +267,14 @@
 
     .link-block:hover{
       background:
-        linear-gradient(90deg, rgba(183,121,69,.10), transparent 45%),
-        linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,0));
+        linear-gradient(90deg, rgba(159,190,119,.14), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,.95), rgba(245,247,251,1));
     }
 
     .link-label{
       display:block;
       margin-bottom:10px;
-      color:var(--copper-soft);
+      color:var(--green-deep);
       font-size:.8rem;
       font-weight:800;
       letter-spacing:.12em;
@@ -257,19 +286,21 @@
       font-size:1.8rem;
       line-height:1.05;
       letter-spacing:-.04em;
+      color:var(--text-strong);
     }
 
     .link-arrow{
       flex:0 0 auto;
-      width:46px;
-      height:46px;
+      width:48px;
+      height:48px;
       border-radius:50%;
       border:1px solid var(--line-soft);
       display:flex;
       align-items:center;
       justify-content:center;
-      color:var(--copper-soft);
+      color:var(--green-deep);
       font-size:1.1rem;
+      background:#fff;
     }
 
     .footer{
@@ -314,6 +345,7 @@
       .link-block{padding:24px 22px}
       h1{max-width:10ch}
       .hero-bottom{flex-direction:column;gap:16px}
+      .logo img{height:60px}
     }
   </style>
 </head>
@@ -321,7 +353,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="BDB ana sayfa">
-        <img src="/logo-bdb.png" alt="BDB logo">
+        <img src="/BDBLOGO.png" alt="BDB logo">
       </a>
 
       <nav class="nav" aria-label="Ana menü">
@@ -343,27 +375,27 @@
             <div class="hero-left">
               <div>
                 <div class="eyebrow">BDB</div>
-                <h1>Tedarik desteği.</h1>
-                <p class="hero-sub">İşletmeler için hızlı teklif, net süreç, düzenli tedarik.</p>
+                <h1>Tedarikte güvenli çözüm.</h1>
+                <p class="hero-sub">İşletmeler için hızlı teklif, net iletişim ve düzenli tedarik süreci sunuyoruz.</p>
 
                 <div class="hero-actions">
-                  <a href="/urunler/" class="btn btn-primary">Ürünler</a>
-                  <a href="/iletisim/" class="btn btn-secondary">İletişim</a>
+                  <a href="/urunler/" class="btn btn-primary">Ürünleri İncele</a>
+                  <a href="/iletisim/" class="btn btn-secondary">İletişime Geç</a>
                 </div>
               </div>
 
               <div class="hero-bottom">
                 <div>
                   <strong>Hızlı teklif</strong>
-                  Kısa sürede dönüş
+                  Kısa sürede geri dönüş
                 </div>
                 <div>
-                  <strong>Net iletişim</strong>
-                  Doğrudan süreç
+                  <strong>Net süreç</strong>
+                  Düzenli ve şeffaf iletişim
                 </div>
                 <div>
-                  <strong>Düzenli tedarik</strong>
-                  Tekrar eden ihtiyaçlar
+                  <strong>Sürdürülebilir tedarik</strong>
+                  Tekrar eden ihtiyaçlara çözüm
                 </div>
               </div>
             </div>
@@ -402,7 +434,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span>© 2026 BDB</span>
-      <span></span>
+      <span>Tedarik desteği</span>
     </div>
   </footer>
 </body>
