@@ -3,29 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hakkımızda | BDB</title>
-  <meta name="description" content="BDB hakkında" />
+  <title>BDB | Hakkımızda</title>
+  <meta name="description" content="BDB, işletmeler için tedarik süreçlerinde düzenli, planlı ve çözüm odaklı destek sunar." />
 
-  <link rel="icon" type="image/x-icon" href="/favicon-logo-only.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-logo-only.png">
-  <link rel="apple-touch-icon" href="/favicon-logo-only.png">
+  <link rel="icon" type="image/png" href="/BDBLOGO.png">
+  <link rel="apple-touch-icon" href="/BDBLOGO.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0f0f10;
-      --bg-soft:#151516;
-      --panel:#1b1b1d;
-      --text:#f3f1ee;
-      --muted:#aaa39c;
-      --line:#2b2622;
-      --line-soft:#332b25;
-      --copper:#b77945;
-      --copper-soft:#d3a06f;
-      --max:1200px;
+      --bg:#ffffff;
+      --bg-soft:#f6f8fc;
+      --panel:#ffffff;
+      --text:#233a63;
+      --text-strong:#162947;
+      --muted:#6a7890;
+      --line:#dbe3ee;
+      --line-soft:#cdd7e5;
+      --navy:#2d436c;
+      --navy-soft:#395683;
+      --green:#9fbe77;
+      --green-deep:#86a75f;
+      --shadow:0 18px 40px rgba(27,44,74,.08);
+      --shadow-soft:0 10px 25px rgba(27,44,74,.05);
+      --max:1180px;
     }
 
     *{box-sizing:border-box}
@@ -36,9 +40,9 @@
       font-family:"Inter", Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top right, rgba(183,121,69,.10), transparent 18%),
-        radial-gradient(circle at left top, rgba(183,121,69,.06), transparent 22%),
-        linear-gradient(180deg,#0f0f10 0%, #141415 100%);
+        radial-gradient(circle at top right, rgba(159,190,119,.10), transparent 18%),
+        radial-gradient(circle at left top, rgba(45,67,108,.06), transparent 20%),
+        linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
     }
 
     a{text-decoration:none;color:inherit}
@@ -48,16 +52,16 @@
     .header{
       position:sticky;
       top:0;
-      z-index:20;
-      background:rgba(15,15,16,.84);
+      z-index:50;
+      background:rgba(255,255,255,.92);
       backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(183,121,69,.12);
+      border-bottom:1px solid rgba(45,67,108,.10);
     }
 
     .header-inner{
-      min-height:84px;
+      min-height:124px;
       display:grid;
-      grid-template-columns:220px 1fr 170px;
+      grid-template-columns:360px 1fr 190px;
       gap:20px;
       align-items:center;
     }
@@ -65,11 +69,11 @@
     .logo{
       display:flex;
       align-items:center;
-      min-height:60px;
+      min-height:96px;
     }
 
     .logo img{
-      height:70px;
+      height:146px;
       width:auto;
       object-fit:contain;
     }
@@ -77,20 +81,36 @@
     .nav{
       display:flex;
       justify-content:center;
-      gap:26px;
+      gap:38px;
       flex-wrap:wrap;
     }
 
     .nav a{
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:1.18rem;
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
       color:var(--muted);
-      font-size:.95rem;
-      font-weight:600;
+      position:relative;
       transition:.2s ease;
     }
 
     .nav a:hover,
     .nav a.active{
-      color:var(--text);
+      color:var(--navy);
+    }
+
+    .nav a.active::after,
+    .nav a:hover::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-12px;
+      width:100%;
+      height:3px;
+      border-radius:999px;
+      background:var(--green);
     }
 
     .top-btn{
@@ -98,48 +118,55 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:46px;
-      padding:0 18px;
-      border-radius:12px;
-      background:linear-gradient(135deg,var(--copper-soft),var(--copper));
-      color:#111;
-      font-size:.92rem;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--navy-soft),var(--navy));
+      color:#fff;
+      font-size:.96rem;
       font-weight:800;
+      text-transform:uppercase;
+      box-shadow:var(--shadow-soft);
+      transition:.2s ease;
     }
 
-    .hero{
-      padding:28px 0 18px;
+    .top-btn:hover{
+      transform:translateY(-1px);
     }
 
-    .hero-box{
+    .page{
+      padding:38px 0 46px;
+    }
+
+    .page-box{
       border:1px solid var(--line);
       border-radius:34px;
       overflow:hidden;
       background:
-        linear-gradient(135deg, rgba(183,121,69,.08), transparent 28%),
-        linear-gradient(180deg,#171718 0%, #111112 100%);
+        linear-gradient(135deg, rgba(45,67,108,.04), transparent 32%),
+        linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
+      box-shadow:var(--shadow);
     }
 
-    .hero-grid{
+    .page-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      min-height:520px;
+      grid-template-columns:1.02fr .98fr;
+      min-height:680px;
     }
 
-    .hero-left{
-      padding:56px;
+    .page-left{
+      padding:72px 58px 54px;
       border-right:1px solid var(--line);
       display:flex;
       flex-direction:column;
-      justify-content:space-between;
-      gap:28px;
+      gap:30px;
     }
 
     .eyebrow{
-      color:var(--copper-soft);
-      font-size:.82rem;
+      color:var(--green-deep);
+      font-size:.84rem;
       font-weight:800;
-      letter-spacing:.14em;
+      letter-spacing:.18em;
       text-transform:uppercase;
       margin-bottom:18px;
     }
@@ -147,49 +174,63 @@
     h1{
       margin:0;
       max-width:8ch;
-      font-size:clamp(3rem,6vw,5.6rem);
-      line-height:.9;
-      letter-spacing:-.08em;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:clamp(2.5rem,4.8vw,4.5rem);
+      line-height:.96;
+      letter-spacing:-.04em;
+      text-transform:uppercase;
+      color:var(--text-strong);
     }
 
-    .hero-sub{
+    .page-sub{
       margin:18px 0 0;
-      max-width:30ch;
+      max-width:40ch;
       color:var(--muted);
-      font-size:1rem;
-      line-height:1.8;
+      font-size:1.05rem;
+      line-height:1.85;
     }
 
-    .hero-bottom{
-      display:flex;
-      gap:28px;
-      flex-wrap:wrap;
-      padding-top:22px;
+    .point-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:auto;
+      padding-top:24px;
       border-top:1px solid var(--line);
     }
 
-    .hero-bottom div{
+    .point{
+      padding:20px 18px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#fff;
+    }
+
+    .point strong{
+      display:block;
+      margin-bottom:8px;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:.95rem;
+      color:var(--text-strong);
+      text-transform:uppercase;
+    }
+
+    .point span{
       color:var(--muted);
       font-size:.94rem;
       line-height:1.7;
     }
 
-    .hero-bottom strong{
-      display:block;
-      margin-bottom:6px;
-      color:var(--text);
-      font-size:.94rem;
-    }
-
-    .hero-right{
+    .page-right{
       display:grid;
-      grid-template-rows:1fr 1fr 1fr;
+      grid-template-rows:1.05fr 1fr 1fr;
+      background:var(--bg-soft);
     }
 
     .info-block{
-      padding:32px;
+      padding:34px;
       border-bottom:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,0));
+      background:linear-gradient(180deg, rgba(255,255,255,.70), rgba(248,251,255,.95));
     }
 
     .info-block:last-child{
@@ -198,22 +239,25 @@
 
     .info-label{
       display:block;
-      margin-bottom:10px;
-      color:var(--copper-soft);
+      margin-bottom:12px;
+      color:var(--green-deep);
       font-size:.8rem;
       font-weight:800;
-      letter-spacing:.12em;
+      letter-spacing:.14em;
       text-transform:uppercase;
     }
 
     .info-title{
-      margin:0 0 10px;
-      font-size:1.35rem;
-      line-height:1.15;
+      margin:0 0 12px;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:1.55rem;
+      line-height:1.08;
       letter-spacing:-.03em;
+      text-transform:uppercase;
+      color:var(--text-strong);
     }
 
-    .info-text{
+    .info-block p{
       margin:0;
       color:var(--muted);
       line-height:1.8;
@@ -221,90 +265,114 @@
     }
 
     .section{
-      padding:18px 0 30px;
+      padding:0 0 46px;
     }
 
-    .content-box{
-      border:1px solid var(--line);
-      border-radius:30px;
-      overflow:hidden;
-      background:linear-gradient(180deg,#171718 0%, #111112 100%);
-    }
-
-    .content-grid{
+    .section-box{
       display:grid;
       grid-template-columns:1fr 1fr;
+      gap:18px;
     }
 
-    .content-main,
-    .content-side{
-      padding:34px;
+    .card{
+      padding:28px 24px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      background:#fff;
+      box-shadow:var(--shadow-soft);
     }
 
-    .content-main{
-      border-right:1px solid var(--line);
+    .card h2{
+      margin:0 0 12px;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:1.35rem;
+      line-height:1.08;
+      letter-spacing:-.03em;
+      text-transform:uppercase;
+      color:var(--text-strong);
     }
 
-    .section-title{
-      margin:0 0 16px;
-      font-size:1.25rem;
-      font-weight:800;
-      color:var(--text);
-    }
-
-    .content-main p{
+    .card p{
       margin:0;
       color:var(--muted);
-      line-height:1.9;
-      font-size:1rem;
-      max-width:58ch;
+      line-height:1.85;
     }
 
-    .list{
-      display:grid;
-      gap:16px;
+    .cta{
+      padding:0 0 48px;
     }
 
-    .list-item{
-      padding-bottom:16px;
-      border-bottom:1px solid var(--line);
+    .cta-box{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      flex-wrap:wrap;
+      padding:34px 30px;
+      border-radius:28px;
+      background:linear-gradient(135deg,var(--navy) 0%, #1f3153 100%);
+      box-shadow:var(--shadow);
     }
 
-    .list-item:last-child{
-      padding-bottom:0;
-      border-bottom:none;
+    .cta-box h2{
+      margin:0 0 10px;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:2rem;
+      line-height:1.05;
+      letter-spacing:-.03em;
+      text-transform:uppercase;
+      color:#fff;
     }
 
-    .list-item strong{
-      display:block;
-      margin-bottom:6px;
-      color:var(--text);
-      font-size:.98rem;
-    }
-
-    .list-item span{
-      display:block;
-      color:var(--muted);
+    .cta-box p{
+      margin:0;
+      max-width:620px;
+      color:rgba(255,255,255,.78);
       line-height:1.8;
-      font-size:.95rem;
+    }
+
+    .cta-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 22px;
+      border-radius:14px;
+      background:var(--green);
+      color:#173050;
+      font-weight:800;
+      text-transform:uppercase;
+      white-space:nowrap;
     }
 
     .footer{
-      padding:24px 0 30px;
+      padding:20px 0 34px;
     }
 
     .footer-inner{
       display:flex;
       justify-content:space-between;
-      gap:12px;
+      gap:16px;
       flex-wrap:wrap;
-      padding-top:18px;
+      padding-top:20px;
       border-top:1px solid var(--line);
       color:var(--muted);
-      font-size:.92rem;
+      font-size:.94rem;
     }
 
-    @media (max-width:980px){
+    @media (max-width:1040px){
+      .page-grid,
+      .section-box{
+        grid-template-columns:1fr;
+      }
+
+      .page-left{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+    }
+
+    @media (max-width:880px){
       .header-inner{
         grid-template-columns:1fr;
         justify-items:center;
@@ -315,28 +383,33 @@
         justify-self:center;
       }
 
-      .hero-grid,
-      .content-grid{
+      .point-grid{
         grid-template-columns:1fr;
       }
 
-      .hero-left,
-      .content-main{
-        border-right:none;
-        border-bottom:1px solid var(--line);
+      .logo img{
+        height:108px;
+      }
+
+      .nav a{
+        font-size:1.05rem;
       }
     }
 
     @media (max-width:720px){
       .header{position:static}
-      .hero-left,
-      .info-block,
-      .content-main,
-      .content-side{
-        padding:22px;
+      .page-left{padding:38px 22px}
+      .info-block{padding:24px 22px}
+      h1{
+        max-width:10ch;
+        font-size:2.4rem;
       }
-      h1{max-width:10ch}
-      .hero-bottom{flex-direction:column;gap:16px}
+      .logo img{
+        height:96px;
+      }
+      .cta-box{
+        padding:28px 22px;
+      }
     }
   </style>
 </head>
@@ -344,65 +417,73 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="BDB ana sayfa">
-        <img src="/logo-bdb.png" alt="BDB logo">
+        <img src="/BDBLOGO.png" alt="BDB logo">
       </a>
 
       <nav class="nav" aria-label="Ana menü">
-        <a href="/">Ana Sayfa</a>
-        <a href="/urunler/">Ürünler</a>
-        <a href="/hakkimizda/" class="active">Hakkımızda</a>
-        <a href="/iletisim/">İletişim</a>
+        <a href="/">ANA SAYFA</a>
+        <a href="/urunler/">ÜRÜNLER</a>
+        <a href="/hakkimizda/" class="active">HAKKIMIZDA</a>
+        <a href="/iletisim/">İLETİŞİM</a>
       </nav>
 
-      <a href="/iletisim/" class="top-btn">Teklif Al</a>
+      <a href="/iletisim/" class="top-btn">TEKLİF AL</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="page">
       <div class="container">
-        <div class="hero-box">
-          <div class="hero-grid">
-            <div class="hero-left">
+        <div class="page-box">
+          <div class="page-grid">
+            <div class="page-left">
               <div>
-                <div class="eyebrow">Hakkımızda</div>
-                <h1>BDB.</h1>
-                <p class="hero-sub">İşletmeler için tedarik desteği.</p>
+                <div class="eyebrow">BDB TEDARİK</div>
+                <h1>HAKKIMIZDA</h1>
+                <p class="page-sub">
+                  BDB, işletmelerin ürün ihtiyaçlarında daha düzenli, planlı ve çözüm odaklı bir tedarik süreci oluşturmayı amaçlayan bir çalışma anlayışıyla hareket eder.
+                </p>
               </div>
 
-              <div class="hero-bottom">
-                <div>
-                  <strong>Hızlı teklif</strong>
-                  Kısa sürede dönüş
+              <div class="point-grid">
+                <div class="point">
+                  <strong>ÇÖZÜM ODAKLI</strong>
+                  <span>İhtiyaca uygun ürün ve süreç değerlendirmesiyle ilerlenir.</span>
                 </div>
-                <div>
-                  <strong>Net iletişim</strong>
-                  Doğrudan süreç
+                <div class="point">
+                  <strong>DÜZENLİ TAKİP</strong>
+                  <span>Tedarik adımları planlı şekilde ele alınır ve takip edilir.</span>
                 </div>
-                <div>
-                  <strong>Düzenli tedarik</strong>
-                  Tekrar eden ihtiyaçlar
+                <div class="point">
+                  <strong>NET İLETİŞİM</strong>
+                  <span>Süreç boyunca açık ve doğrudan iletişim esas alınır.</span>
                 </div>
               </div>
             </div>
 
-            <div class="hero-right">
+            <div class="page-right">
               <div class="info-block">
-                <span class="info-label">Ne yapıyoruz</span>
-                <h2 class="info-title">Tedarik desteği</h2>
-                <p class="info-text">Ürün taleplerinde teklif ve tedarik sürecine destek veriyoruz.</p>
+                <span class="info-label">Yaklaşımımız</span>
+                <h2 class="info-title">İHTİYACA UYGUN TEDARİK SÜRECİ</h2>
+                <p>
+                  Her talebin içeriği farklı olduğu için süreç, ihtiyaç doğrultusunda değerlendirilir ve uygun ürün yönlendirmesiyle ilerletilir.
+                </p>
               </div>
 
               <div class="info-block">
-                <span class="info-label">Nasıl çalışıyoruz</span>
-                <h2 class="info-title">Kısa ve net</h2>
-                <p class="info-text">Gereksiz detay olmadan, doğrudan ve düzenli bir süreçle ilerliyoruz.</p>
+                <span class="info-label">Çalışma Şeklimiz</span>
+                <h2 class="info-title">PLANLI VE DÜZENLİ İLERLEME</h2>
+                <p>
+                  Tek seferlik taleplerde de devam eden alımlarda da süreçlerin daha kontrollü ve düzenli ilerlemesine önem verilir.
+                </p>
               </div>
 
               <div class="info-block">
-                <span class="info-label">Bölge</span>
-                <h2 class="info-title">İzmir</h2>
-                <p class="info-text">İzmir merkezli çalışma yapısıyla talepleri değerlendiriyoruz.</p>
+                <span class="info-label">İletişim</span>
+                <h2 class="info-title">DOĞRUDAN VE ANLAŞILIR İLETİŞİM</h2>
+                <p>
+                  Talep, ürün ve süreç detaylarının net şekilde paylaşılması; daha sağlıklı ve hızlı bir ilerleme sağlar.
+                </p>
               </div>
             </div>
           </div>
@@ -412,35 +493,32 @@
 
     <section class="section">
       <div class="container">
-        <div class="content-box">
-          <div class="content-grid">
-            <div class="content-main">
-              <h2 class="section-title">BDB hakkında</h2>
-              <p>
-                BDB, işletmelerin ürün ihtiyaçlarında teklif ve tedarik sürecine destek vermek için çalışan bir yapıdır.
-                Amaç, ihtiyaç duyulan ürünlerde daha düzenli, daha net ve daha pratik bir süreç sunmaktır.
-              </p>
-            </div>
-
-            <div class="content-side">
-              <div class="list">
-                <div class="list-item">
-                  <strong>Teklif süreci</strong>
-                  <span>Ürün taleplerine kısa sürede dönüş sağlanır.</span>
-                </div>
-
-                <div class="list-item">
-                  <strong>İletişim</strong>
-                  <span>Telefon, WhatsApp ve e-posta üzerinden doğrudan iletişim kurulur.</span>
-                </div>
-
-                <div class="list-item">
-                  <strong>Çalışma yapısı</strong>
-                  <span>Tek seferlik ve düzenli ihtiyaçlarda sürecin devamlılığı hedeflenir.</span>
-                </div>
-              </div>
-            </div>
+        <div class="section-box">
+          <div class="card">
+            <h2>NE YAPIYORUZ</h2>
+            <p>
+              İşletmelerin ürün taleplerini değerlendiriyor, uygun tedarik sürecinin oluşturulmasına destek oluyor ve ihtiyaçlara göre daha planlı bir akış sağlıyoruz.
+            </p>
           </div>
+
+          <div class="card">
+            <h2>NASIL ÇALIŞIYORUZ</h2>
+            <p>
+              Talebin anlaşılması, ürün yönlendirmesi, süreç takibi ve iletişimin düzenli yürütülmesi esasına dayalı bir çalışma yaklaşımı benimsiyoruz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>TEDARİK SÜRECİNİZ İÇİN İLETİŞİME GEÇİN</h2>
+            <p>Ürün talepleriniz ve tedarik süreçleriniz için bizimle doğrudan iletişime geçebilirsiniz.</p>
+          </div>
+          <a href="/iletisim/" class="cta-btn">İLETİŞİME GEÇ</a>
         </div>
       </div>
     </section>
@@ -449,7 +527,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span>© 2026 BDB</span>
-      <span></span>
+      <span>TEDARİK ÇÖZÜMLERİ</span>
     </div>
   </footer>
 </body>
