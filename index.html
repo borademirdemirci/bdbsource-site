@@ -16,13 +16,19 @@
 
   <style>
     :root{
-      --bg:#0f1113;
-      --bg-soft:#15181b;
-      --panel:#1b1f23;
-      --line:#2a3036;
-      --text:#f3f5f7;
-      --muted:#9ea7b0;
-      --max:1180px;
+      --bg:#0f0f10;
+      --bg-soft:#151516;
+      --panel:#1b1b1d;
+      --panel-2:#211d1a;
+      --text:#f3f1ee;
+      --muted:#aaa39c;
+      --line:#2b2622;
+      --line-soft:#332b25;
+      --copper:#b77945;
+      --copper-soft:#d3a06f;
+      --copper-deep:#6f4828;
+      --max:1200px;
+      --radius:28px;
     }
 
     *{box-sizing:border-box}
@@ -30,8 +36,11 @@
     body{
       margin:0;
       font-family:"Inter", Arial, sans-serif;
-      background:linear-gradient(180deg,#0f1113 0%, #15181b 100%);
       color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(183,121,69,.10), transparent 18%),
+        radial-gradient(circle at left top, rgba(183,121,69,.06), transparent 22%),
+        linear-gradient(180deg,#0f0f10 0%, #141415 100%);
     }
 
     a{text-decoration:none;color:inherit}
@@ -42,17 +51,17 @@
       position:sticky;
       top:0;
       z-index:20;
-      background:rgba(15,17,19,.88);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.04);
+      background:rgba(15,15,16,.84);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(183,121,69,.12);
     }
 
     .header-inner{
-      min-height:82px;
+      min-height:84px;
       display:grid;
-      grid-template-columns:220px 1fr 160px;
+      grid-template-columns:220px 1fr 170px;
+      gap:20px;
       align-items:center;
-      gap:18px;
     }
 
     .logo{
@@ -62,7 +71,7 @@
     }
 
     .logo img{
-      height:68px;
+      height:70px;
       width:auto;
       object-fit:contain;
     }
@@ -70,7 +79,7 @@
     .nav{
       display:flex;
       justify-content:center;
-      gap:24px;
+      gap:26px;
       flex-wrap:wrap;
     }
 
@@ -91,36 +100,46 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:44px;
+      min-height:46px;
       padding:0 18px;
       border-radius:12px;
-      background:var(--text);
-      color:#0f1113;
+      background:linear-gradient(135deg,var(--copper-soft),var(--copper));
+      color:#111;
       font-size:.92rem;
       font-weight:800;
     }
 
     .hero{
-      padding:34px 0 22px;
+      padding:28px 0 24px;
     }
 
     .hero-box{
-      min-height:520px;
-      padding:56px;
       border:1px solid var(--line);
-      border-radius:28px;
+      border-radius:34px;
+      overflow:hidden;
       background:
-        radial-gradient(circle at top right, rgba(255,255,255,.04), transparent 18%),
-        linear-gradient(135deg,#171a1d 0%, #101214 100%);
+        linear-gradient(135deg, rgba(183,121,69,.08), transparent 28%),
+        linear-gradient(180deg,#171718 0%, #111112 100%);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      min-height:640px;
+    }
+
+    .hero-left{
+      padding:64px 56px;
+      border-right:1px solid var(--line);
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      gap:28px;
+      gap:30px;
     }
 
     .eyebrow{
-      color:var(--muted);
-      font-size:.8rem;
+      color:var(--copper-soft);
+      font-size:.82rem;
       font-weight:800;
       letter-spacing:.14em;
       text-transform:uppercase;
@@ -130,16 +149,24 @@
     h1{
       margin:0;
       max-width:9ch;
-      font-size:clamp(3rem,7vw,6rem);
-      line-height:.92;
-      letter-spacing:-.07em;
+      font-size:clamp(3.2rem,6vw,6rem);
+      line-height:.9;
+      letter-spacing:-.08em;
+    }
+
+    .hero-sub{
+      margin:18px 0 0;
+      max-width:28ch;
+      color:var(--muted);
+      font-size:1.02rem;
+      line-height:1.85;
     }
 
     .hero-actions{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      margin-top:26px;
+      margin-top:30px;
     }
 
     .btn{
@@ -152,107 +179,101 @@
       border-radius:14px;
       font-size:.94rem;
       font-weight:800;
+      transition:.2s ease;
     }
 
     .btn-primary{
-      background:var(--text);
-      color:#0f1113;
+      background:linear-gradient(135deg,var(--copper-soft),var(--copper));
+      color:#111;
     }
 
     .btn-secondary{
-      border:1px solid var(--line);
+      border:1px solid var(--line-soft);
       color:var(--text);
       background:transparent;
     }
 
-    .hero-strip{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:14px;
-      padding-top:24px;
+    .hero-bottom{
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+      padding-top:22px;
       border-top:1px solid var(--line);
     }
 
-    .hero-strip div{
+    .hero-bottom div{
       color:var(--muted);
-      font-size:.95rem;
+      font-size:.94rem;
       line-height:1.7;
     }
 
-    .hero-strip strong{
+    .hero-bottom strong{
       display:block;
-      color:var(--text);
       margin-bottom:6px;
-      font-size:.95rem;
-    }
-
-    .section{
-      padding:22px 0;
-    }
-
-    .section-title{
-      margin:0 0 18px;
-      font-size:1.05rem;
-      font-weight:800;
       color:var(--text);
-      letter-spacing:.02em;
+      font-size:.94rem;
     }
 
-    .section-box{
-      padding:26px 0 0;
-      border-top:1px solid var(--line);
+    .hero-right{
+      padding:0;
+      display:grid;
+      grid-template-rows:1fr 1fr 1fr;
     }
 
-    .section-action{
-      display:inline-flex;
+    .link-block{
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:20px;
+      padding:34px;
+      border-bottom:1px solid var(--line);
+      transition:.2s ease;
+      background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,0));
+    }
+
+    .link-block:last-child{
+      border-bottom:none;
+    }
+
+    .link-block:hover{
+      background:
+        linear-gradient(90deg, rgba(183,121,69,.10), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,0));
+    }
+
+    .link-label{
+      display:block;
+      margin-bottom:10px;
+      color:var(--copper-soft);
+      font-size:.8rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .link-title{
+      margin:0;
+      font-size:1.8rem;
+      line-height:1.05;
+      letter-spacing:-.04em;
+    }
+
+    .link-arrow{
+      flex:0 0 auto;
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      border:1px solid var(--line-soft);
+      display:flex;
       align-items:center;
       justify-content:center;
-      min-height:48px;
-      padding:0 18px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      color:var(--text);
-      font-size:.93rem;
-      font-weight:700;
-      background:transparent;
-    }
-
-    .contact{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:8px;
-    }
-
-    .contact-item{
-      padding:22px 24px;
-      border:1px solid var(--line);
-      border-radius:22px;
-      background:var(--panel);
-    }
-
-    .contact-item span{
-      display:block;
-      margin-bottom:8px;
-      color:var(--muted);
-      font-size:.88rem;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-
-    .contact-item strong,
-    .contact-item a{
-      font-size:1rem;
-      font-weight:700;
-      color:var(--text);
-      word-break:break-word;
+      color:var(--copper-soft);
+      font-size:1.1rem;
     }
 
     .footer{
-      padding:26px 0 30px;
-      border-top:1px solid var(--line);
-      margin-top:24px;
+      padding:24px 0 30px;
     }
 
     .footer-inner{
@@ -260,11 +281,13 @@
       justify-content:space-between;
       gap:12px;
       flex-wrap:wrap;
+      padding-top:18px;
+      border-top:1px solid var(--line);
       color:var(--muted);
       font-size:.92rem;
     }
 
-    @media (max-width:920px){
+    @media (max-width:980px){
       .header-inner{
         grid-template-columns:1fr;
         justify-items:center;
@@ -275,16 +298,22 @@
         justify-self:center;
       }
 
-      .contact,
-      .hero-strip{
+      .hero-grid{
         grid-template-columns:1fr;
+      }
+
+      .hero-left{
+        border-right:none;
+        border-bottom:1px solid var(--line);
       }
     }
 
     @media (max-width:720px){
       .header{position:static}
-      .hero-box{padding:34px 22px;min-height:auto}
+      .hero-left{padding:36px 22px}
+      .link-block{padding:24px 22px}
       h1{max-width:10ch}
+      .hero-bottom{flex-direction:column;gap:16px}
     }
   </style>
 </head>
@@ -297,8 +326,8 @@
 
       <nav class="nav" aria-label="Ana menü">
         <a href="/" class="active">Ana Sayfa</a>
-        <a href="/kurumsal/">Kurumsal</a>
         <a href="/urunler/">Ürünler</a>
+        <a href="/hakkimizda/">Hakkımızda</a>
         <a href="/iletisim/">İletişim</a>
       </nav>
 
@@ -310,61 +339,60 @@
     <section class="hero">
       <div class="container">
         <div class="hero-box">
-          <div>
-            <div class="eyebrow">BDB</div>
-            <h1>Tedarik desteği.</h1>
+          <div class="hero-grid">
+            <div class="hero-left">
+              <div>
+                <div class="eyebrow">BDB</div>
+                <h1>Tedarik desteği.</h1>
+                <p class="hero-sub">İşletmeler için hızlı teklif, net süreç, düzenli tedarik.</p>
 
-            <div class="hero-actions">
-              <a href="/urunler/" class="btn btn-primary">Ürünler</a>
-              <a href="/iletisim/" class="btn btn-secondary">İletişim</a>
+                <div class="hero-actions">
+                  <a href="/urunler/" class="btn btn-primary">Ürünler</a>
+                  <a href="/iletisim/" class="btn btn-secondary">İletişim</a>
+                </div>
+              </div>
+
+              <div class="hero-bottom">
+                <div>
+                  <strong>Hızlı teklif</strong>
+                  Kısa sürede dönüş
+                </div>
+                <div>
+                  <strong>Net iletişim</strong>
+                  Doğrudan süreç
+                </div>
+                <div>
+                  <strong>Düzenli tedarik</strong>
+                  Tekrar eden ihtiyaçlar
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="hero-strip">
-            <div>
-              <strong>Hızlı teklif</strong>
-              Kısa sürede dönüş
+            <div class="hero-right">
+              <a href="/urunler/" class="link-block">
+                <div>
+                  <span class="link-label">01</span>
+                  <h2 class="link-title">Ürünler</h2>
+                </div>
+                <div class="link-arrow">→</div>
+              </a>
+
+              <a href="/hakkimizda/" class="link-block">
+                <div>
+                  <span class="link-label">02</span>
+                  <h2 class="link-title">Hakkımızda</h2>
+                </div>
+                <div class="link-arrow">→</div>
+              </a>
+
+              <a href="/iletisim/" class="link-block">
+                <div>
+                  <span class="link-label">03</span>
+                  <h2 class="link-title">İletişim</h2>
+                </div>
+                <div class="link-arrow">→</div>
+              </a>
             </div>
-            <div>
-              <strong>Net iletişim</strong>
-              Doğrudan süreç
-            </div>
-            <div>
-              <strong>Düzenli tedarik</strong>
-              Tekrar eden ihtiyaçlar
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-title">Ürünler</div>
-        <div class="section-box">
-          <a href="/urunler/" class="section-action">Ürün Sayfası</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-title">İletişim</div>
-
-        <div class="contact">
-          <div class="contact-item">
-            <span>Telefon</span>
-            <a href="tel:+905327889759">0532 788 97 59</a>
-          </div>
-
-          <div class="contact-item">
-            <span>WhatsApp</span>
-            <a href="https://wa.me/905379956261" target="_blank" rel="noopener">0537 995 62 61</a>
-          </div>
-
-          <div class="contact-item">
-            <span>E-posta</span>
-            <a href="mailto:info@bdbsource.com.tr">info@bdbtedarik.com</a>
           </div>
         </div>
       </div>
