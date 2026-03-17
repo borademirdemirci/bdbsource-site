@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>BDB | Tedarik Desteği</title>
-  <meta name="description" content="BDB, işletmeler için hızlı teklif ve düzenli tedarik desteği sunar.">
+  <meta name="description" content="BDB tedarik desteği" />
 
   <link rel="icon" type="image/x-icon" href="/favicon-logo-only.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-logo-only.png">
@@ -17,32 +16,33 @@
 
   <style>
     :root{
-      --bg:#111315;
-      --bg-2:#171a1d;
-      --surface:#1d2125;
-      --line:#2b3137;
+      --bg:#0f1113;
+      --bg-soft:#15181b;
+      --panel:#1b1f23;
+      --line:#2a3036;
       --text:#f3f5f7;
-      --muted:#a7afb7;
+      --muted:#9ea7b0;
       --max:1180px;
     }
 
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:"Inter", Arial, sans-serif;
+      background:linear-gradient(180deg,#0f1113 0%, #15181b 100%);
       color:var(--text);
-      background:linear-gradient(180deg,var(--bg) 0%, var(--bg-2) 100%);
     }
 
     a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
+    img{display:block;max-width:100%}
     .container{width:min(100% - 32px, var(--max));margin:0 auto}
 
     .header{
       position:sticky;
       top:0;
       z-index:20;
-      background:rgba(17,19,21,.88);
+      background:rgba(15,17,19,.88);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.04);
     }
@@ -51,8 +51,8 @@
       min-height:82px;
       display:grid;
       grid-template-columns:220px 1fr 160px;
-      gap:18px;
       align-items:center;
+      gap:18px;
     }
 
     .logo{
@@ -62,7 +62,7 @@
     }
 
     .logo img{
-      height:70px;
+      height:68px;
       width:auto;
       object-fit:contain;
     }
@@ -86,61 +86,60 @@
       color:var(--text);
     }
 
-    .cta-top{
+    .top-btn{
       justify-self:end;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:46px;
+      min-height:44px;
       padding:0 18px;
       border-radius:12px;
       background:var(--text);
-      color:var(--bg);
+      color:#0f1113;
       font-size:.92rem;
       font-weight:800;
     }
 
     .hero{
-      padding:36px 0 28px;
+      padding:34px 0 22px;
     }
 
     .hero-box{
+      min-height:520px;
+      padding:56px;
       border:1px solid var(--line);
       border-radius:28px;
-      padding:72px 56px;
-      background:linear-gradient(135deg,#17191c 0%, #111315 100%);
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,.04), transparent 18%),
+        linear-gradient(135deg,#171a1d 0%, #101214 100%);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:28px;
     }
 
     .eyebrow{
-      margin-bottom:18px;
       color:var(--muted);
-      font-size:.82rem;
+      font-size:.8rem;
       font-weight:800;
       letter-spacing:.14em;
       text-transform:uppercase;
+      margin-bottom:18px;
     }
 
     h1{
-      margin:0 0 18px;
-      max-width:10ch;
-      font-size:clamp(3rem,6vw,5.4rem);
-      line-height:.95;
-      letter-spacing:-.06em;
-    }
-
-    .hero p{
       margin:0;
-      max-width:48ch;
-      color:var(--muted);
-      font-size:1.04rem;
-      line-height:1.85;
+      max-width:9ch;
+      font-size:clamp(3rem,7vw,6rem);
+      line-height:.92;
+      letter-spacing:-.07em;
     }
 
-    .actions{
+    .hero-actions{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      margin-top:28px;
+      margin-top:26px;
     }
 
     .btn{
@@ -157,7 +156,7 @@
 
     .btn-primary{
       background:var(--text);
-      color:var(--bg);
+      color:#0f1113;
     }
 
     .btn-secondary{
@@ -166,46 +165,102 @@
       background:transparent;
     }
 
-    .band{
-      padding:0 0 28px;
+    .hero-strip{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      padding-top:24px;
+      border-top:1px solid var(--line);
     }
 
-    .band-box{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-      padding:18px 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
+    .hero-strip div{
       color:var(--muted);
+      font-size:.95rem;
+      line-height:1.7;
+    }
+
+    .hero-strip strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:6px;
       font-size:.95rem;
     }
 
     .section{
-      padding:28px 0 42px;
+      padding:22px 0;
     }
 
-    .info{
-      max-width:760px;
+    .section-title{
+      margin:0 0 18px;
+      font-size:1.05rem;
+      font-weight:800;
+      color:var(--text);
+      letter-spacing:.02em;
     }
 
-    .info h2{
-      margin:0 0 12px;
-      font-size:clamp(1.8rem,3vw,2.6rem);
-      line-height:1.08;
-      letter-spacing:-.04em;
+    .groups{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
     }
 
-    .info p{
+    .group{
+      padding:24px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:var(--panel);
+    }
+
+    .group h2{
+      margin:0 0 14px;
+      font-size:1.05rem;
+      line-height:1.4;
+    }
+
+    .group ul{
       margin:0;
+      padding-left:18px;
       color:var(--muted);
-      line-height:1.9;
+      line-height:1.85;
+      font-size:.95rem;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:8px;
+    }
+
+    .contact-item{
+      padding:22px 24px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:var(--panel);
+    }
+
+    .contact-item span{
+      display:block;
+      margin-bottom:8px;
+      color:var(--muted);
+      font-size:.88rem;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .contact-item strong,
+    .contact-item a{
       font-size:1rem;
+      font-weight:700;
+      color:var(--text);
+      word-break:break-word;
     }
 
     .footer{
-      padding:28px 0;
+      padding:26px 0 30px;
       border-top:1px solid var(--line);
+      margin-top:24px;
     }
 
     .footer-inner{
@@ -217,18 +272,28 @@
       font-size:.92rem;
     }
 
-    @media (max-width:900px){
+    @media (max-width:920px){
       .header-inner{
         grid-template-columns:1fr;
         justify-items:center;
         padding:14px 0;
       }
+
+      .top-btn{
+        justify-self:center;
+      }
+
+      .groups,
+      .contact,
+      .hero-strip{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width:720px){
       .header{position:static}
-      .hero-box{padding:40px 24px}
-      h1{max-width:12ch}
+      .hero-box{padding:34px 22px;min-height:auto}
+      h1{max-width:10ch}
     }
   </style>
 </head>
@@ -246,7 +311,7 @@
         <a href="/iletisim/">İletişim</a>
       </nav>
 
-      <a href="/iletisim/" class="cta-top">Teklif Al</a>
+      <a href="/iletisim/" class="top-btn">Teklif Al</a>
     </div>
   </header>
 
@@ -254,38 +319,91 @@
     <section class="hero">
       <div class="container">
         <div class="hero-box">
-          <div class="eyebrow">BDB Tedarik</div>
-          <h1>İşletmeler için tedarik desteği.</h1>
-          <p>
-            İhtiyaç duyduğunuz ürünler için hızlı teklif, net iletişim ve düzenli tedarik desteği sunuyoruz.
-          </p>
+          <div>
+            <div class="eyebrow">BDB</div>
+            <h1>Tedarik desteği.</h1>
 
-          <div class="actions">
-            <a href="/iletisim/" class="btn btn-primary">İletişime Geç</a>
-            <a href="/urunler/" class="btn btn-secondary">Ürünler</a>
+            <div class="hero-actions">
+              <a href="/urunler/" class="btn btn-primary">Ürünler</a>
+              <a href="/iletisim/" class="btn btn-secondary">İletişim</a>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="band">
-      <div class="container">
-        <div class="band-box">
-          <span>Hızlı teklif</span>
-          <span>Net iletişim</span>
-          <span>Düzenli tedarik</span>
+          <div class="hero-strip">
+            <div>
+              <strong>Hızlı teklif</strong>
+              Kısa sürede dönüş
+            </div>
+            <div>
+              <strong>Net iletişim</strong>
+              Doğrudan süreç
+            </div>
+            <div>
+              <strong>Düzenli tedarik</strong>
+              Tekrar eden ihtiyaçlar
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="info">
-          <h2>Kısa ve net</h2>
-          <p>
-            BDB, işletmelerin ürün ihtiyaçlarında teklif ve tedarik sürecine destek verir.
-            Detaylı bilgi için ürünler ve iletişim sayfalarını inceleyebilirsiniz.
-          </p>
+        <div class="section-title">Ürün Grupları</div>
+
+        <div class="groups">
+          <div class="group">
+            <h2>Koruyucu ve hijyen</h2>
+            <ul>
+              <li>Nitril eldiven</li>
+              <li>Maske</li>
+              <li>Bone</li>
+              <li>Kolluk</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <h2>Ambalaj ve paketleme</h2>
+            <ul>
+              <li>Koli bandı</li>
+              <li>Streç film</li>
+              <li>Karton koli</li>
+              <li>Poşet</li>
+            </ul>
+          </div>
+
+          <div class="group">
+            <h2>Sevkiyat ve sarf</h2>
+            <ul>
+              <li>Palet</li>
+              <li>Köşebent</li>
+              <li>Jel buz</li>
+              <li>Diğer talepler</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">İletişim</div>
+
+        <div class="contact">
+          <div class="contact-item">
+            <span>Telefon</span>
+            <a href="tel:+905327889759">0532 788 97 59</a>
+          </div>
+
+          <div class="contact-item">
+            <span>WhatsApp</span>
+            <a href="https://wa.me/905379956261" target="_blank" rel="noopener">0537 995 62 61</a>
+          </div>
+
+          <div class="contact-item">
+            <span>E-posta</span>
+            <a href="mailto:info@bdbsource.com.tr">info@bdbsource.com.tr</a>
+          </div>
         </div>
       </div>
     </section>
