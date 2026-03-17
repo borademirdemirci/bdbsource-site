@@ -4,506 +4,597 @@
   <link rel="icon" type="image/x-icon" href="/favicon-logo-only.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-logo-only.png">
   <link rel="apple-touch-icon" href="/favicon-logo-only.png">
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BDB | Fabrikalar İçin Ambalaj ve Sarf Tedariki</title>
-  <meta name="description" content="BDB, İzmir merkezli işletmelere ve fabrikalara ambalaj, koruyucu ürünler ve operasyonel sarf malzemelerinde hızlı teklif, uygun fiyat ve düzenli tedarik desteği sunar." />
+
+  <title>BDB | Üreticiden Tedarik ve Ürün Araştırma Desteği</title>
+  <meta
+    name="description"
+    content="BDB, işletmelerin ihtiyaç duyduğu ürünleri araştırır, uygun üreticilerden tedarik eder ve hızlı teklif süreciyle pratik çözümler sunar."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#edf3f8;
-      --bg-soft:#f7fafc;
+      --bg:#f4f7fb;
       --surface:#ffffff;
-      --text:#203548;
-      --muted:#647789;
-      --line:#d7e2eb;
-      --blue:#1798de;
-      --blue-dark:#163a59;
-      --shadow:0 18px 40px rgba(16,42,66,.08);
-      --shadow-soft:0 10px 24px rgba(16,42,66,.06);
-      --max:1180px;
-      --radius:26px;
+      --text:#1f2f3d;
+      --muted:#657688;
+      --line:#d9e2ea;
+      --primary:#123a59;
+      --primary-soft:#eaf2f8;
+      --accent:#1696dd;
+      --max:1120px;
+      --radius:22px;
+      --shadow:0 12px 30px rgba(17,43,67,.08);
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:"Inter",Arial,sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(23,152,222,.10), transparent 28%),
-        linear-gradient(180deg,#edf3f8 0%,#f7fafc 100%);
+      background:linear-gradient(180deg,#edf3f8 0%, #f8fbfd 100%);
     }
+
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-    .container{width:min(100% - 32px,var(--max));margin:0 auto}
+    .container{width:min(100% - 32px, var(--max));margin:0 auto}
 
     .header{
-      position:sticky;top:0;z-index:30;
-      padding:20px 0 12px;
-      backdrop-filter:blur(12px);
-      background:rgba(237,243,248,.72);
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(244,247,251,.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(18,58,89,.06);
     }
-    .header-box{
-      display:grid;
-      grid-template-columns:220px 1fr 220px;
+
+    .header-inner{
+      display:flex;
       align-items:center;
-      gap:18px;
-      padding:16px 22px;
-      border:1px solid rgba(255,255,255,.7);
-      border-radius:24px;
-      background:rgba(255,255,255,.9);
-      box-shadow:var(--shadow-soft);
+      justify-content:space-between;
+      gap:20px;
+      min-height:82px;
     }
-    .logo-wrap{display:flex;align-items:center;min-height:68px}
-    .logo-image{height:82px;width:auto;object-fit:contain}
-    .nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:160px;
+    }
+
+    .logo-image{
+      height:64px;
+      width:auto;
+      object-fit:contain;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
     .nav a{
-      padding:12px 16px;border-radius:999px;font-weight:700;
-      color:var(--muted);font-size:.96rem;transition:.25s ease;
-    }
-    .nav a:hover,.nav a.active{background:rgba(23,152,222,.08);color:var(--blue-dark)}
-    .header-note{
-      justify-self:end;color:var(--muted);font-size:.82rem;
-      font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-    }
-
-    .hero{padding:14px 0 18px}
-    .hero-box{
-      position:relative;overflow:hidden;
-      min-height:620px;
-      padding:58px;
-      border-radius:32px;
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:34px;align-items:center;
-      color:#fff;
-      border:1px solid rgba(0,0,0,.06);
-      box-shadow:var(--shadow);
-      background:
-        radial-gradient(circle at top right, rgba(88,184,238,.22), transparent 24%),
-        linear-gradient(135deg, rgba(16,42,66,.97), rgba(22,58,89,.94) 46%, rgba(26,86,128,.92) 100%);
-    }
-    .hero-box:before{
-      content:"";position:absolute;inset:0;pointer-events:none;
-      background:
-        linear-gradient(30deg,transparent 0 38%,rgba(255,255,255,.07) 38% 40%,transparent 40%),
-        linear-gradient(142deg,transparent 0 58%,rgba(255,255,255,.05) 58% 62%,transparent 62%);
-    }
-    .hero-content,.hero-side{position:relative;z-index:1}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;
-      margin-bottom:18px;color:rgba(255,255,255,.82);
-      font-size:.84rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
-    }
-    .eyebrow:before{
-      content:"";width:34px;height:2px;border-radius:999px;background:rgba(255,255,255,.65)
-    }
-    h1{
-      margin:0 0 18px;
-      max-width:11ch;
-      font-family:"Playfair Display",Georgia,serif;
-      font-size:clamp(3rem,6vw,5rem);
-      line-height:.96;letter-spacing:-.05em;
-    }
-    .hero p{
-      margin:0;
-      max-width:60ch;
-      color:rgba(255,255,255,.85);
-      font-size:1.05rem;line-height:1.9;
-    }
-    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
-    .button{
-      display:inline-flex;align-items:center;justify-content:center;
-      min-width:156px;padding:15px 20px;border-radius:14px;
-      border:1px solid rgba(255,255,255,.18);
-      color:#fff;font-weight:800;font-size:.94rem;
-      transition:.2s ease;
-      background:rgba(255,255,255,.08);
-    }
-    .button:hover{transform:translateY(-2px)}
-    .button.primary{background:var(--blue);border-color:var(--blue)}
-
-    .hero-side{display:grid;gap:16px}
-    .side-card{
-      border-radius:24px;
-      padding:24px;
-      background:rgba(255,255,255,.11);
-      border:1px solid rgba(255,255,255,.14);
-    }
-    .side-card h2,.side-card h3{margin:0 0 10px;font-size:1.18rem;line-height:1.3}
-    .side-card p{margin:0;color:rgba(255,255,255,.82);line-height:1.75;font-size:.97rem}
-
-    .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .feature-mini{
-      padding:18px;border-radius:18px;
-      background:rgba(255,255,255,.09);
-      border:1px solid rgba(255,255,255,.1);
-    }
-    .feature-mini strong{display:block;margin-bottom:8px;font-size:.98rem}
-    .feature-mini span{display:block;color:rgba(255,255,255,.78);font-size:.92rem;line-height:1.6}
-
-    .strip{padding:0 0 20px}
-    .strip-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
-    }
-    .strip-item{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:22px;
-      box-shadow:var(--shadow-soft);
-    }
-    .strip-item strong{display:block;margin-bottom:8px;color:var(--blue-dark);font-size:1rem}
-    .strip-item span{display:block;color:var(--muted);line-height:1.7;font-size:.95rem}
-
-    .section{padding:38px 0}
-    .section-head{margin-bottom:24px}
-    .section-kicker{
-      color:var(--blue-dark);font-size:.84rem;font-weight:800;
-      text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px;
-    }
-    .section-title{
-      margin:0 0 12px;font-size:clamp(1.9rem,3vw,2.8rem);
-      line-height:1.08;letter-spacing:-.03em;
-      font-family:"Playfair Display",Georgia,serif;
-    }
-    .section-text{
-      margin:0;max-width:70ch;color:var(--muted);
-      font-size:1.02rem;line-height:1.8;
-    }
-
-    .intro-layout{
-      display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:start;
-    }
-    .intro-panel{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:26px;
-      padding:30px;
-      box-shadow:var(--shadow-soft);
-    }
-    .trust-points{
-      display:flex;flex-wrap:wrap;gap:10px;
-      margin-top:22px;
-    }
-    .trust-points span{
       padding:10px 14px;
       border-radius:999px;
-      background:rgba(23,152,222,.08);
-      color:var(--blue-dark);
-      font-size:.9rem;
+      font-size:.95rem;
       font-weight:700;
-      border:1px solid rgba(23,152,222,.12);
+      color:var(--muted);
+      transition:.2s ease;
     }
 
-    .process{display:grid;gap:14px}
-    .process-item{
-      display:grid;grid-template-columns:48px 1fr;gap:14px;
-      align-items:start;
-      padding:18px 20px;border-radius:20px;
-      background:var(--surface);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow-soft);
+    .nav a:hover{
+      color:var(--primary);
+      background:rgba(18,58,89,.06);
     }
-    .num{
-      width:48px;height:48px;border-radius:14px;
-      display:flex;align-items:center;justify-content:center;
-      background:var(--blue-dark);color:#fff;font-weight:800;
-    }
-    .process-item h3{margin:4px 0 8px;font-size:1.03rem}
-    .process-item p{margin:0;color:var(--muted);line-height:1.72;font-size:.95rem}
 
-    .category-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+    .header-cta{
+      padding:12px 18px;
+      border-radius:12px;
+      background:var(--primary);
+      color:#fff;
+      font-size:.92rem;
+      font-weight:800;
+      white-space:nowrap;
     }
-    .category{
+
+    .hero{
+      padding:56px 0 28px;
+    }
+
+    .hero-box{
+      background:
+        radial-gradient(circle at top right, rgba(22,150,221,.15), transparent 22%),
+        linear-gradient(135deg, rgba(18,58,89,.98), rgba(24,76,112,.95));
+      color:#fff;
+      border-radius:32px;
+      padding:56px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-eyebrow{
+      display:inline-block;
+      margin-bottom:16px;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.74);
+    }
+
+    h1{
+      margin:0 0 18px;
+      max-width:12ch;
+      font-size:clamp(2.6rem,5vw,4.5rem);
+      line-height:1.02;
+      letter-spacing:-.04em;
+    }
+
+    .hero-text{
+      max-width:720px;
+      margin:0;
+      color:rgba(255,255,255,.86);
+      font-size:1.08rem;
+      line-height:1.8;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:150px;
+      padding:15px 20px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:.94rem;
+      transition:.2s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:34px;
+    }
+
+    .hero-point{
+      padding:18px 20px;
+      border-radius:18px;
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    .hero-point strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:.98rem;
+    }
+
+    .hero-point span{
+      color:rgba(255,255,255,.78);
+      font-size:.93rem;
+      line-height:1.6;
+    }
+
+    .section{
+      padding:34px 0;
+    }
+
+    .section-head{
+      margin-bottom:22px;
+    }
+
+    .section-kicker{
+      margin-bottom:8px;
+      color:var(--primary);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .section-title{
+      margin:0 0 10px;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+      line-height:1.1;
+      letter-spacing:-.03em;
+    }
+
+    .section-text{
+      margin:0;
+      max-width:760px;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:1rem;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .card{
       background:var(--surface);
       border:1px solid var(--line);
       border-radius:24px;
       padding:26px;
-      box-shadow:var(--shadow-soft);
-      transition:.2s ease;
+      box-shadow:0 10px 24px rgba(17,43,67,.05);
     }
-    .category:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-    .category-badge{
-      width:48px;height:48px;border-radius:14px;
-      display:inline-flex;align-items:center;justify-content:center;
-      margin-bottom:18px;background:rgba(23,152,222,.1);
-      color:var(--blue-dark);font-weight:800;
+
+    .card-number{
+      width:46px;
+      height:46px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:18px;
+      border-radius:14px;
+      background:var(--primary-soft);
+      color:var(--primary);
+      font-weight:800;
     }
-    .category h3{margin:0 0 12px;font-size:1.18rem;line-height:1.35}
-    .category p{margin:0 0 16px;color:var(--muted);line-height:1.8;font-size:.96rem}
-    .category-list{
-      margin:0 0 18px;
+
+    .card h3{
+      margin:0 0 12px;
+      font-size:1.14rem;
+      line-height:1.35;
+    }
+
+    .card p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:.96rem;
+    }
+
+    .card ul{
+      margin:0;
       padding-left:18px;
       color:var(--muted);
-      display:grid;
-      gap:8px;
+      line-height:1.7;
       font-size:.94rem;
-      line-height:1.6;
     }
-    .category a{color:var(--blue-dark);font-weight:800;font-size:.95rem}
 
-    .cta{padding:12px 0 30px}
-    .cta-box{
-      display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
-      padding:34px;border-radius:28px;color:#fff;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,.08);
-      background:
-        radial-gradient(circle at top right, rgba(88,184,238,.18), transparent 28%),
-        linear-gradient(135deg,#143553,#1b4d73);
+    .about-box,
+    .contact-box{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:30px;
+      box-shadow:0 10px 24px rgba(17,43,67,.05);
     }
-    .cta-box h2{
-      margin:0 0 10px;font-size:clamp(1.8rem,3vw,2.5rem);
-      line-height:1.1;font-family:"Playfair Display",Georgia,serif;
-    }
-    .cta-box p{margin:0;color:rgba(255,255,255,.82);line-height:1.8;max-width:56ch}
 
-    .footer{padding:0 0 30px}
+    .about-box p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:1rem;
+      max-width:860px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:14px;
+    }
+
+    .contact-item{
+      padding:18px 20px;
+      border-radius:18px;
+      background:#f8fbfd;
+      border:1px solid var(--line);
+    }
+
+    .contact-item strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--primary);
+      font-size:.95rem;
+    }
+
+    .contact-item a,
+    .contact-item span{
+      color:var(--text);
+      font-size:1rem;
+      font-weight:600;
+      word-break:break-word;
+    }
+
+    .contact-note{
+      height:100%;
+      padding:24px;
+      border-radius:22px;
+      background:linear-gradient(135deg,#143553,#1d5279);
+      color:#fff;
+    }
+
+    .contact-note h3{
+      margin:0 0 12px;
+      font-size:1.25rem;
+      line-height:1.3;
+    }
+
+    .contact-note p{
+      margin:0;
+      color:rgba(255,255,255,.82);
+      line-height:1.8;
+      font-size:.97rem;
+    }
+
+    .contact-note .hero-actions{
+      margin-top:22px;
+    }
+
+    .footer{
+      padding:18px 0 30px;
+    }
+
     .footer-box{
-      background:var(--surface);border:1px solid var(--line);
-      border-radius:26px;padding:26px;box-shadow:var(--shadow-soft);
-    }
-    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:22px}
-    .footer-brand h3{margin:0 0 12px;color:var(--blue-dark);font-size:1.08rem}
-    .footer-brand p,.footer-column p,.footer-column a{
-      margin:0;color:var(--muted);line-height:1.8;font-size:.95rem
-    }
-    .footer-column strong{display:block;margin-bottom:10px;font-size:.96rem}
-    .footer-links{display:grid;gap:8px}
-    .footer-bottom{
-      margin-top:20px;padding-top:18px;border-top:1px solid var(--line);
-      color:var(--muted);font-size:.9rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      padding:22px 0 0;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.92rem;
     }
 
-    @media (max-width:1100px){
-      .hero-box,.intro-layout,.category-grid,.strip-grid,.footer-grid{grid-template-columns:1fr}
-      .hero-box{min-height:auto}
-    }
     @media (max-width:980px){
-      .header-box{grid-template-columns:1fr;text-align:center}
-      .logo-wrap,.header-note{justify-self:center}
+      .header-inner{
+        flex-direction:column;
+        justify-content:center;
+        padding:14px 0;
+      }
+
+      .hero-box{
+        padding:34px 24px;
+      }
+
+      .hero-points,
+      .cards,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        max-width:14ch;
+      }
     }
-    @media (max-width:720px){
-      .header{position:static}
-      .hero-box{padding:34px 22px;border-radius:24px}
-      .feature-list{grid-template-columns:1fr}
-      h1{max-width:12ch}
-      .cta-box,.footer-box{padding:22px}
+
+    @media (max-width:680px){
+      .header{
+        position:static;
+      }
+
+      .nav{
+        gap:6px;
+      }
+
+      .nav a{
+        padding:9px 12px;
+        font-size:.9rem;
+      }
+
+      .header-cta{
+        width:100%;
+        text-align:center;
+      }
+
+      .hero{
+        padding-top:28px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header class="header">
-    <div class="container header-box">
+    <div class="container header-inner">
       <a href="/" class="logo-wrap" aria-label="BDB ana sayfa">
         <img class="logo-image" src="/logo-bdb.png" alt="BDB logo">
       </a>
+
       <nav class="nav" aria-label="Ana menü">
-        <a class="active" href="/">Ana Sayfa</a>
-        <a href="/kurumsal/">Kurumsal</a>
-        <a href="/urunler/">Ürünler</a>
-        <a href="/iletisim/">İletişim</a>
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#urunler">Ürünler</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#iletisim">İletişim</a>
       </nav>
-      <div class="header-note">İzmir merkezli tedarik</div>
+
+      <a class="header-cta" href="#iletisim">Teklif Al</a>
     </div>
   </header>
 
-  <main>
+  <main id="anasayfa">
     <section class="hero">
-      <div class="container hero-box">
-        <div class="hero-content">
-          <div class="eyebrow">BDB Tedarik Desteği</div>
-          <h1>Fabrikalar için düzenli ve uygun maliyetli ürün tedariki.</h1>
-          <p>
-            Ambalaj, koruyucu ürünler ve operasyonel sarf malzemelerinde
-            ihtiyaçlarınıza uygun çözümler sunuyoruz. Hızlı teklif, uygun fiyat
-            ve düzenli tedarik desteğiyle işletmenizin tekrar eden ihtiyaçlarını
-            pratik şekilde yönetmenize yardımcı oluyoruz.
+      <div class="container">
+        <div class="hero-box">
+          <div class="hero-eyebrow">BDB Tedarik</div>
+          <h1>İhtiyacınıza uygun ürünü doğru üreticiden tedarik ediyoruz.</h1>
+          <p class="hero-text">
+            BDB, işletmelerin ihtiyaç duyduğu ürünleri araştırır, uygun üretici ve tedarik
+            alternatiflerini sunar, teklif ve tedarik sürecini pratik şekilde yönetir.
+            Düzenli ihtiyaçlarda hızlı geri dönüş ve net iletişim odaklı çalışır.
           </p>
-          <div class="actions">
-            <a class="button primary" href="/iletisim/">Teklif Al</a>
-            <a class="button" href="/urunler/">Ürünleri İncele</a>
-          </div>
-        </div>
 
-        <div class="hero-side">
-          <div class="side-card">
-            <h2>Doğru ürünü bulmayı ve tedarik sürecini kolaylaştırıyoruz</h2>
-            <p>
-              Üreticilerden temin edilen ürün grupları arasından ihtiyacınıza uygun
-              seçenekleri değerlendiriyor, fiyat ve tedarik sürecini açık ve hızlı şekilde yönetiyoruz.
-            </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#iletisim">İletişime Geç</a>
+            <a class="btn btn-secondary" href="#urunler">Ürünleri Gör</a>
           </div>
-          <div class="feature-list">
-            <div class="feature-mini">
-              <strong>Uygun fiyat</strong>
-              <span>İhtiyacınıza göre fiyat ve ürün alternatifi sunuyoruz.</span>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Ürün araştırması</strong>
+              <span>İhtiyaca uygun ürün ve üretici seçenekleri belirlenir.</span>
             </div>
-            <div class="feature-mini">
+            <div class="hero-point">
+              <strong>Hızlı teklif</strong>
+              <span>Talebe göre net ve anlaşılır teklif süreci yürütülür.</span>
+            </div>
+            <div class="hero-point">
               <strong>Düzenli tedarik</strong>
-              <span>Tek seferlik değil, tekrar eden ihtiyaçlar için sürdürülebilir destek.</span>
-            </div>
-            <div class="feature-mini">
-              <strong>Hızlı geri dönüş</strong>
-              <span>Telefon, WhatsApp ve e-posta üzerinden hızlı iletişim.</span>
-            </div>
-            <div class="feature-mini">
-              <strong>İşletmeye uygun ürün</strong>
-              <span>Kullanım alanınıza göre doğru ürün grubuna yönlendirme.</span>
+              <span>Tek seferlik veya tekrar eden ihtiyaçlar için destek verilir.</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="strip">
-      <div class="container strip-grid">
-        <div class="strip-item">
-          <strong>Fabrika ve işletme odaklı ürünler</strong>
-          <span>Üretim, paketleme, sevkiyat ve günlük operasyonlarda kullanılan temel ürün grupları.</span>
-        </div>
-        <div class="strip-item">
-          <strong>Alternatifli teklif yaklaşımı</strong>
-          <span>İhtiyacınıza göre ürün, kalite ve fiyat seçeneklerini birlikte değerlendiriyoruz.</span>
-        </div>
-        <div class="strip-item">
-          <strong>İzmir ve yakın bölgelere destek</strong>
-          <span>İzmir merkezli yapımızla talepleri hızlı şekilde karşılamaya odaklanıyoruz.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container intro-layout">
-        <div class="intro-panel">
-          <div class="section-head">
-            <div class="section-kicker">Nasıl Çalışıyoruz</div>
-            <h2 class="section-title">Tekrar eden ürün ihtiyaçlarında hızlı ve net ilerliyoruz</h2>
-            <p class="section-text">
-              Özellikle fabrikaların ve işletmelerin düzenli ihtiyaç duyduğu ürün gruplarında,
-              talebi anlayıp uygun ürünleri belirliyor ve teklif sürecini zaman kaybetmeden yönetiyoruz.
-            </p>
-          </div>
-
-          <div class="trust-points">
-            <span>İzmir merkezli</span>
-            <span>Uygun fiyat odaklı</span>
-            <span>Düzenli tedarik desteği</span>
-            <span>Hızlı teklif süreci</span>
-          </div>
-        </div>
-
-        <div class="process">
-          <div class="process-item">
-            <div class="num">01</div>
-            <div>
-              <h3>İhtiyacın netleştirilmesi</h3>
-              <p>Kullanım alanı, ürün tipi ve talep miktarı belirlenerek doğru ürün grubu seçilir.</p>
-            </div>
-          </div>
-          <div class="process-item">
-            <div class="num">02</div>
-            <div>
-              <h3>Uygun ürün ve alternatiflerin sunulması</h3>
-              <p>Talebinize uygun ürünler değerlendirilir, gerekiyorsa farklı fiyat ve kalite alternatifleri hazırlanır.</p>
-            </div>
-          </div>
-          <div class="process-item">
-            <div class="num">03</div>
-            <div>
-              <h3>Teklif paylaşımı</h3>
-              <p>Ürün ve fiyat bilgileri anlaşılır şekilde iletilir, ihtiyaç duyulan detaylar hızlıca netleştirilir.</p>
-            </div>
-          </div>
-          <div class="process-item">
-            <div class="num">04</div>
-            <div>
-              <h3>Tedarik planının yürütülmesi</h3>
-              <p>Onaylanan taleplerde süreci takip ederek düzenli ve pratik bir tedarik akışı oluşturulur.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
+    <section class="section" id="urunler">
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Ürün Grupları</div>
-          <h2 class="section-title">İşletmelerin günlük operasyonlarında kullanılan temel ürünler</h2>
+          <h2 class="section-title">İhtiyaca göre farklı ürün gruplarında tedarik desteği</h2>
           <p class="section-text">
-            Koruyucu ürünlerden ambalaj ve sevkiyat malzemelerine kadar farklı ihtiyaçlara yönelik
-            ürün grupları sunuyoruz. Aşağıdaki liste örnek ürünleri içerir.
+            Sabit bir ürün listesiyle sınırlı kalmadan, talebe uygun ürün ve üretici araştırması yapıyoruz.
+            Aşağıdaki başlıklar örnek çalışma alanlarını gösterir.
           </p>
         </div>
 
-        <div class="category-grid">
-          <article class="category">
-            <div class="category-badge">01</div>
-            <h3>Koruyucu ve hijyen ürünleri</h3>
-            <p>Üretim alanı, paketleme hattı ve personel kullanımı için ihtiyaç duyulan tek kullanımlık ve koruyucu ürünler.</p>
-            <ul class="category-list">
-              <li>Tek kullanımlık nitril eldiven</li>
-              <li>İş eldivenleri</li>
-              <li>Lateks eldiven</li>
-              <li>Tek kullanımlık bone ve sakal bonesi</li>
-              <li>Tek kullanımlık maske</li>
-              <li>Tela kolluk, naylon önlük ve çizme galoş</li>
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">01</div>
+            <h3>Koruyucu ve operasyonel sarf ürünleri</h3>
+            <p>
+              Üretim, paketleme ve günlük kullanım süreçlerinde ihtiyaç duyulan temel ürün grupları.
+            </p>
+            <ul>
+              <li>Nitril ve lateks eldiven</li>
+              <li>Maske, bone, kolluk</li>
+              <li>İş eldiveni ve yardımcı sarf ürünleri</li>
             </ul>
-            <a href="/urunler/">Tüm ürünleri incele</a>
           </article>
 
-          <article class="category">
-            <div class="category-badge">02</div>
-            <h3>Ambalaj ve paketleme ürünleri</h3>
-            <p>Sevkiyat, koruma, paketleme ve günlük kullanım için ihtiyaç duyulan ambalaj ürün grupları.</p>
-            <ul class="category-list">
-              <li>Koli bandı</li>
-              <li>El tipi streç film</li>
-              <li>Naylon poşet</li>
-              <li>Vakum poşet</li>
-              <li>Karton koli</li>
-              <li>Plas kâğıt ve köşebent</li>
+          <article class="card">
+            <div class="card-number">02</div>
+            <h3>Ambalaj ve sevkiyat ürünleri</h3>
+            <p>
+              Paketleme, koruma ve sevkiyat sürecinde kullanılan ürünler için tedarik desteği.
+            </p>
+            <ul>
+              <li>Koli bandı ve streç film</li>
+              <li>Karton koli ve poşet çeşitleri</li>
+              <li>Palet, köşebent ve yardımcı ambalaj ürünleri</li>
             </ul>
-            <a href="/urunler/">Tüm ürünleri incele</a>
           </article>
 
-          <article class="category">
-            <div class="category-badge">03</div>
-            <h3>Sevkiyat ve operasyonel sarf ürünleri</h3>
-            <p>Depolama, taşıma ve operasyon akışında kullanılan yardımcı ürünler ve sarf malzemeleri.</p>
-            <ul class="category-list">
-              <li>Jel buz</li>
-              <li>Ahşap palet</li>
-              <li>EPAL palet</li>
-              <li>Düzenli kullanım için tekrar siparişe uygun ürün grupları</li>
+          <article class="card">
+            <div class="card-number">03</div>
+            <h3>Talebe özel ürün araştırması</h3>
+            <p>
+              Listede yer almayan ürünlerde de ihtiyaca uygun üretici ve tedarik alternatifleri sunulur.
+            </p>
+            <ul>
+              <li>İhtiyaca göre üretici araştırması</li>
+              <li>Alternatif ürün ve fiyat çalışması</li>
+              <li>Düzenli siparişe uygun tedarik planı</li>
             </ul>
-            <a href="/urunler/">Tüm ürünleri incele</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="cta">
+    <section class="section" id="hakkimizda">
       <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2>İhtiyacınıza uygun ürün ve fiyat teklifi için bize ulaşın</h2>
-            <p>
-              Kullanım alanınızı ve ihtiyaç duyduğunuz ürünleri iletin, size uygun ürün grupları
-              ve fiyat seçenekleriyle hızlı şekilde dönüş yapalım.
-            </p>
+        <div class="section-head">
+          <div class="section-kicker">Hakkımızda</div>
+          <h2 class="section-title">Kısa ve net tedarik desteği</h2>
+        </div>
+
+        <div class="about-box">
+          <p>
+            BDB, müşteri ihtiyacına uygun ürünleri doğru üreticilerden temin etmek amacıyla çalışan
+            bir tedarik yapısıdır. Süreç boyunca ürün araştırması, alternatiflerin değerlendirilmesi,
+            teklif oluşturulması ve tedarik organizasyonu konularında pratik destek sunar. Amacımız,
+            işletmelerin ihtiyaç duyduğu ürünlere daha hızlı, daha net ve düzenli şekilde ulaşmasına
+            yardımcı olmaktır.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="iletisim">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">İletişim</div>
+          <h2 class="section-title">Ürün talebiniz için bize ulaşın</h2>
+          <p class="section-text">
+            İhtiyacınız olan ürünü, miktarı veya kullanım alanını iletin. Uygun seçenekler ve teklif süreci için dönüş sağlayalım.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-box">
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Telefon</strong>
+                <a href="tel:+905327889759">0532 788 97 59</a>
+              </div>
+
+              <div class="contact-item">
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/905379956261" target="_blank" rel="noopener">0537 995 62 61</a>
+              </div>
+
+              <div class="contact-item">
+                <strong>E-posta</strong>
+                <a href="mailto:info@bdbsource.com.tr">info@bdbsource.com.tr</a>
+              </div>
+
+              <div class="contact-item">
+                <strong>Bölge</strong>
+                <span>İzmir ve çevresi</span>
+              </div>
+            </div>
           </div>
-          <div class="actions">
-            <a class="button primary" href="tel:+905327889759">Hemen Ara</a>
-            <a class="button" href="https://wa.me/905379956261" target="_blank" rel="noopener">WhatsApp</a>
+
+          <div class="contact-note">
+            <h3>Talebinizi kısa şekilde iletmeniz yeterli</h3>
+            <p>
+              Ürün adı, tahmini miktar ve kullanım alanını paylaştığınızda size uygun seçenekleri
+              ve teklif sürecini daha hızlı hazırlayabiliriz.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="tel:+905327889759">Hemen Ara</a>
+              <a class="btn btn-secondary" href="https://wa.me/905379956261" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
           </div>
         </div>
       </div>
@@ -511,45 +602,13 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-box">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>BDB</h3>
-          <p>
-            BDB, BDB Ticaret tarafından kullanılan marka adıdır. İzmir merkezli olarak
-            ambalaj, koruyucu ürünler ve operasyonel sarf malzemelerinde işletmelere tedarik desteği sunar.
-          </p>
-          <p style="margin-top:12px;">
-            Özellikle düzenli ürün ihtiyacı olan işletmeler için hızlı teklif, uygun fiyat ve ulaşılabilir iletişim odaklı çalışıyoruz.
-          </p>
-        </div>
-
-        <div class="footer-column">
-          <strong>Sayfalar</strong>
-          <div class="footer-links">
-            <a href="/">Ana Sayfa</a>
-            <a href="/kurumsal/">Kurumsal</a>
-            <a href="/urunler/">Ürünler</a>
-            <a href="/iletisim/">İletişim</a>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <strong>İletişim</strong>
-          <div class="footer-links">
-            <a href="mailto:info@bdbsource.com.tr">info@bdbsource.com.tr</a>
-            <a href="tel:+905327889759">Telefon: 0532 788 97 59</a>
-            <a href="https://wa.me/905379956261" target="_blank" rel="noopener">WhatsApp: 0537 995 62 61</a>
-            <p>Bölge: İzmir ve yakın çevre</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 bdbsource.com.tr</span>
-        <span>Ambalaj ve Sarf Tedariki</span>
+    <div class="container">
+      <div class="footer-box">
+        <span>© 2026 BDB</span>
+        <span>Üretici araştırması ve tedarik desteği</span>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
