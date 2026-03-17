@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <link rel="icon" type="image/x-icon" href="/favicon-logo-only.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-logo-only.png">
-  <link rel="apple-touch-icon" href="/favicon-logo-only.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ürünler | BDB</title>
-  <meta name="description" content="BDB, İzmir merkezli olarak fabrikalar ve işletmeler için koruyucu ürünler, ambalaj malzemeleri, palet ve operasyonel sarf ürünlerinde teklif ve tedarik desteği sunar." />
+  <meta name="description" content="BDB ürünler" />
+
+  <link rel="icon" type="image/x-icon" href="/favicon-logo-only.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-logo-only.png">
+  <link rel="apple-touch-icon" href="/favicon-logo-only.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#edf3f8;
-      --surface:#ffffff;
-      --surface-soft:#f7fafc;
-      --text:#203548;
-      --muted:#647789;
-      --line:#d7e2eb;
-      --blue:#1798de;
-      --blue-dark:#163a59;
-      --shadow:0 18px 40px rgba(16,42,66,.08);
-      --shadow-soft:0 10px 24px rgba(16,42,66,.06);
-      --max:1180px;
+      --bg:#0f0f10;
+      --bg-soft:#151516;
+      --panel:#1b1b1d;
+      --text:#f3f1ee;
+      --muted:#aaa39c;
+      --line:#2b2622;
+      --line-soft:#332b25;
+      --copper:#b77945;
+      --copper-soft:#d3a06f;
+      --max:1200px;
     }
 
     *{box-sizing:border-box}
@@ -33,120 +33,131 @@
 
     body{
       margin:0;
-      font-family:"Inter",Arial,sans-serif;
+      font-family:"Inter", Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(23,152,222,.10), transparent 28%),
-        linear-gradient(180deg,#edf3f8 0%,#f7fafc 100%);
+        radial-gradient(circle at top right, rgba(183,121,69,.10), transparent 18%),
+        radial-gradient(circle at left top, rgba(183,121,69,.06), transparent 22%),
+        linear-gradient(180deg,#0f0f10 0%, #141415 100%);
     }
 
     a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(100% - 32px,var(--max));margin:0 auto}
+    img{display:block;max-width:100%}
+    .container{width:min(100% - 32px, var(--max));margin:0 auto}
 
     .header{
       position:sticky;
       top:0;
-      z-index:30;
-      padding:20px 0 12px;
+      z-index:20;
+      background:rgba(15,15,16,.84);
       backdrop-filter:blur(12px);
-      background:rgba(237,243,248,.72);
+      border-bottom:1px solid rgba(183,121,69,.12);
     }
 
-    .header-box{
+    .header-inner{
+      min-height:84px;
       display:grid;
-      grid-template-columns:220px 1fr 220px;
+      grid-template-columns:220px 1fr 170px;
+      gap:20px;
       align-items:center;
-      gap:18px;
-      padding:16px 22px;
-      border-radius:24px;
-      background:rgba(255,255,255,.9);
-      border:1px solid rgba(255,255,255,.7);
-      box-shadow:var(--shadow-soft);
     }
 
-    .logo-wrap{display:flex;align-items:center;min-height:68px}
-    .logo-image{height:82px;width:auto;object-fit:contain}
+    .logo{
+      display:flex;
+      align-items:center;
+      min-height:60px;
+    }
+
+    .logo img{
+      height:70px;
+      width:auto;
+      object-fit:contain;
+    }
 
     .nav{
       display:flex;
       justify-content:center;
-      gap:12px;
+      gap:26px;
       flex-wrap:wrap;
     }
 
     .nav a{
-      padding:12px 16px;
-      border-radius:999px;
       color:var(--muted);
-      font-weight:700;
-      font-size:.96rem;
-      transition:.25s ease;
+      font-size:.95rem;
+      font-weight:600;
+      transition:.2s ease;
     }
 
     .nav a:hover,
     .nav a.active{
-      background:rgba(23,152,222,.08);
-      color:var(--blue-dark);
+      color:var(--text);
     }
 
-    .header-note{
+    .top-btn{
       justify-self:end;
-      color:var(--muted);
-      font-size:.82rem;
-      font-weight:700;
-      letter-spacing:.16em;
-      text-transform:uppercase;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 18px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--copper-soft),var(--copper));
+      color:#111;
+      font-size:.92rem;
+      font-weight:800;
     }
 
     .hero{
-      padding:14px 0 24px;
+      padding:28px 0 18px;
     }
 
     .hero-box{
+      border:1px solid var(--line);
+      border-radius:34px;
+      overflow:hidden;
+      background:
+        linear-gradient(135deg, rgba(183,121,69,.08), transparent 28%),
+        linear-gradient(180deg,#171718 0%, #111112 100%);
+    }
+
+    .hero-grid{
       display:grid;
       grid-template-columns:1.05fr .95fr;
-      gap:22px;
-      align-items:stretch;
-      padding:28px;
-      border-radius:32px;
-      overflow:hidden;
-      border:1px solid rgba(0,0,0,.06);
-      box-shadow:var(--shadow);
-      background:
-        radial-gradient(circle at top right, rgba(88,184,238,.22), transparent 24%),
-        linear-gradient(135deg, rgba(16,42,66,.97), rgba(22,58,89,.94) 46%, rgba(26,86,128,.92) 100%);
-      color:#fff;
+      min-height:520px;
     }
 
-    .hero-main{
-      padding:12px 8px 8px;
+    .hero-left{
+      padding:56px;
+      border-right:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:28px;
     }
 
-    .kicker{
-      color:rgba(255,255,255,.82);
-      font-size:.84rem;
+    .eyebrow{
+      color:var(--copper-soft);
+      font-size:.82rem;
       font-weight:800;
+      letter-spacing:.14em;
       text-transform:uppercase;
-      letter-spacing:.18em;
-      margin-bottom:14px;
+      margin-bottom:18px;
     }
 
     h1{
-      margin:0 0 16px;
-      font-family:"Playfair Display",Georgia,serif;
-      font-size:clamp(2.7rem,5vw,4.8rem);
-      line-height:1;
-      letter-spacing:-.04em;
-      max-width:10ch;
+      margin:0;
+      max-width:8ch;
+      font-size:clamp(3rem,6vw,5.6rem);
+      line-height:.9;
+      letter-spacing:-.08em;
     }
 
-    .hero-main p{
-      margin:0;
-      max-width:60ch;
-      color:rgba(255,255,255,.84);
-      line-height:1.9;
-      font-size:1.03rem;
+    .hero-sub{
+      margin:18px 0 0;
+      max-width:28ch;
+      color:var(--muted);
+      font-size:1rem;
+      line-height:1.8;
     }
 
     .hero-actions{
@@ -156,740 +167,323 @@
       margin-top:28px;
     }
 
-    .button{
+    .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width:156px;
-      padding:15px 20px;
+      min-width:160px;
+      min-height:52px;
+      padding:0 20px;
       border-radius:14px;
       font-size:.94rem;
       font-weight:800;
-      transition:.2s ease;
-      border:1px solid rgba(255,255,255,.18);
-      color:#fff;
-      background:rgba(255,255,255,.08);
     }
 
-    .button.primary{
-      background:var(--blue);
-      border-color:var(--blue);
+    .btn-primary{
+      background:linear-gradient(135deg,var(--copper-soft),var(--copper));
+      color:#111;
     }
 
-    .button:hover{transform:translateY(-2px)}
-
-    .hero-side{
-      display:grid;
-      gap:16px;
+    .btn-secondary{
+      border:1px solid var(--line-soft);
+      color:var(--text);
+      background:transparent;
     }
 
-    .hero-card{
-      padding:22px;
-      border-radius:24px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.14);
+    .hero-bottom{
+      display:flex;
+      gap:28px;
+      flex-wrap:wrap;
+      padding-top:22px;
+      border-top:1px solid var(--line);
     }
 
-    .hero-card h2{
-      margin:0 0 12px;
-      font-size:1.12rem;
-      line-height:1.35;
+    .hero-bottom div{
+      color:var(--muted);
+      font-size:.94rem;
+      line-height:1.7;
     }
 
-    .hero-card p{
-      margin:0;
-      color:rgba(255,255,255,.82);
-      line-height:1.8;
-      font-size:.96rem;
-    }
-
-    .hero-points{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .hero-point{
-      padding:16px;
-      border-radius:18px;
-      background:rgba(255,255,255,.09);
-      border:1px solid rgba(255,255,255,.10);
-    }
-
-    .hero-point strong{
+    .hero-bottom strong{
       display:block;
-      margin-bottom:8px;
-      font-size:.95rem;
+      margin-bottom:6px;
+      color:var(--text);
+      font-size:.94rem;
     }
 
-    .hero-point span{
+    .hero-right{
+      display:grid;
+      grid-template-rows:1fr 1fr 1fr;
+    }
+
+    .info-block{
+      padding:32px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.01), rgba(255,255,255,0));
+    }
+
+    .info-block:last-child{
+      border-bottom:none;
+    }
+
+    .info-label{
       display:block;
-      color:rgba(255,255,255,.78);
-      line-height:1.6;
-      font-size:.9rem;
-    }
-
-    .section{
-      padding:18px 0 34px;
-    }
-
-    .section-head{
-      margin-bottom:24px;
-    }
-
-    .section-kicker{
-      color:var(--blue-dark);
-      font-size:.84rem;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.14em;
       margin-bottom:10px;
+      color:var(--copper-soft);
+      font-size:.8rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
     }
 
-    .section-title{
-      margin:0 0 12px;
-      font-family:"Playfair Display",Georgia,serif;
-      font-size:clamp(1.9rem,3vw,2.8rem);
-      line-height:1.08;
+    .info-title{
+      margin:0 0 10px;
+      font-size:1.35rem;
+      line-height:1.15;
       letter-spacing:-.03em;
     }
 
-    .section-text{
-      margin:0;
-      color:var(--muted);
-      max-width:68ch;
-      line-height:1.85;
-      font-size:1.02rem;
-    }
-
-    .quick-band{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-
-    .quick-item{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:22px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .quick-item strong{
-      display:block;
-      margin-bottom:8px;
-      color:var(--blue-dark);
-      font-size:1rem;
-    }
-
-    .quick-item span{
-      display:block;
-      color:var(--muted);
-      line-height:1.75;
-      font-size:.95rem;
-    }
-
-    .catalog{
-      display:grid;
-      gap:22px;
-    }
-
-    .catalog-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:30px;
-      box-shadow:var(--shadow-soft);
-      overflow:hidden;
-    }
-
-    .catalog-head{
-      display:grid;
-      grid-template-columns:180px 1fr;
-      gap:22px;
-      padding:28px 30px 0;
-      align-items:start;
-    }
-
-    .catalog-badge{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      align-items:flex-start;
-    }
-
-    .catalog-no{
-      width:62px;
-      height:62px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(23,152,222,.10);
-      color:var(--blue-dark);
-      font-weight:800;
-      font-size:1.08rem;
-    }
-
-    .catalog-tag{
-      color:var(--blue-dark);
-      font-size:.84rem;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-    }
-
-    .catalog-intro h2{
-      margin:0 0 12px;
-      font-family:"Playfair Display",Georgia,serif;
-      font-size:2rem;
-      line-height:1.08;
-    }
-
-    .catalog-intro p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.85;
-      font-size:.98rem;
-      max-width:70ch;
-    }
-
-    .product-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      padding:24px 30px 30px;
-    }
-
-    .product-mini{
-      background:var(--surface-soft);
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:18px;
-    }
-
-    .product-mini strong{
-      display:block;
-      margin-bottom:8px;
-      color:var(--text);
-      font-size:.97rem;
-    }
-
-    .product-mini span{
-      display:block;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:.92rem;
-    }
-
-    .support-layout{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:22px;
-      align-items:start;
-    }
-
-    .support-card,
-    .support-note{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:28px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .step-list{
-      display:grid;
-      gap:16px;
-      margin-top:18px;
-    }
-
-    .step{
-      display:grid;
-      grid-template-columns:48px 1fr;
-      gap:14px;
-      align-items:start;
-    }
-
-    .step-no{
-      width:48px;
-      height:48px;
-      border-radius:14px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:var(--blue-dark);
-      color:#fff;
-      font-weight:800;
-    }
-
-    .step h3{
-      margin:4px 0 8px;
-      font-size:1.02rem;
-    }
-
-    .step p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.78;
-      font-size:.95rem;
-    }
-
-    .support-note h3{
-      margin:0 0 12px;
-      font-family:"Playfair Display",Georgia,serif;
-      font-size:1.85rem;
-      line-height:1.08;
-    }
-
-    .support-note p{
-      margin:0 0 16px;
-      color:var(--muted);
-      line-height:1.85;
-    }
-
-    .support-note ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--muted);
-      line-height:1.9;
-    }
-
-    .support-note li + li{
-      margin-top:6px;
-    }
-
-    .cta{
-      padding:10px 0 30px;
-    }
-
-    .cta-box{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:24px;
-      flex-wrap:wrap;
-      padding:34px;
-      border-radius:28px;
-      color:#fff;
-      box-shadow:var(--shadow);
-      background:
-        radial-gradient(circle at top right, rgba(88,184,238,.18), transparent 28%),
-        linear-gradient(135deg,#143553,#1b4d73);
-    }
-
-    .cta-box h2{
-      margin:0 0 10px;
-      font-family:"Playfair Display",Georgia,serif;
-      font-size:clamp(1.8rem,3vw,2.5rem);
-      line-height:1.1;
-    }
-
-    .cta-box p{
-      margin:0;
-      color:rgba(255,255,255,.84);
-      line-height:1.8;
-      max-width:56ch;
-    }
-
-    .footer{
-      padding:0 0 30px;
-    }
-
-    .footer-box{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:26px;
-      padding:26px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.4fr 1fr 1fr;
-      gap:22px;
-    }
-
-    .footer-brand h3{
-      margin:0 0 12px;
-      color:var(--blue-dark);
-      font-size:1.08rem;
-    }
-
-    .footer-brand p,
-    .footer-column p,
-    .footer-column a{
+    .info-text{
       margin:0;
       color:var(--muted);
       line-height:1.8;
-      font-size:.95rem;
-    }
-
-    .footer-column strong{
-      display:block;
-      margin-bottom:10px;
       font-size:.96rem;
     }
 
-    .footer-links{
-      display:grid;
-      gap:8px;
+    .section{
+      padding:18px 0 30px;
     }
 
-    .footer-bottom{
-      margin-top:20px;
+    .groups-box{
+      border:1px solid var(--line);
+      border-radius:30px;
+      overflow:hidden;
+      background:linear-gradient(180deg,#171718 0%, #111112 100%);
+    }
+
+    .groups-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      padding:30px 34px 20px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-title{
+      margin:0;
+      font-size:1.25rem;
+      font-weight:800;
+      color:var(--text);
+    }
+
+    .section-note{
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    .groups-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+    }
+
+    .group-item{
+      padding:28px 34px;
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .group-item:nth-child(2n){
+      border-right:none;
+    }
+
+    .group-item:nth-last-child(-n+2){
+      border-bottom:none;
+    }
+
+    .group-no{
+      display:block;
+      margin-bottom:10px;
+      color:var(--copper-soft);
+      font-size:.8rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .group-item h2{
+      margin:0;
+      font-size:1.4rem;
+      line-height:1.15;
+      letter-spacing:-.03em;
+    }
+
+    .footer{
+      padding:24px 0 30px;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
       padding-top:18px;
       border-top:1px solid var(--line);
       color:var(--muted);
-      font-size:.9rem;
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-
-    @media (max-width:1100px){
-      .hero-box,
-      .quick-band,
-      .catalog-head,
-      .product-grid,
-      .support-layout,
-      .footer-grid{
-        grid-template-columns:1fr;
-      }
+      font-size:.92rem;
     }
 
     @media (max-width:980px){
-      .header-box{
+      .header-inner{
         grid-template-columns:1fr;
-        text-align:center;
+        justify-items:center;
+        padding:14px 0;
       }
-      .logo-wrap,
-      .header-note{
+
+      .top-btn{
         justify-self:center;
+      }
+
+      .hero-grid,
+      .groups-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-left{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+
+      .group-item{
+        border-right:none;
+      }
+
+      .group-item:nth-last-child(-n+2){
+        border-bottom:1px solid var(--line);
+      }
+
+      .group-item:last-child{
+        border-bottom:none;
       }
     }
 
     @media (max-width:720px){
       .header{position:static}
-      .hero-box,
-      .support-card,
-      .support-note,
-      .footer-box{
+      .hero-left,
+      .info-block,
+      .groups-head,
+      .group-item{
         padding:22px;
       }
-      .catalog-head{
-        padding:22px 22px 0;
-      }
-      .product-grid{
-        padding:18px 22px 22px;
-      }
-      .hero-points{
-        grid-template-columns:1fr;
-      }
-      .step{
-        grid-template-columns:1fr;
-      }
+      h1{max-width:10ch}
+      .hero-bottom{flex-direction:column;gap:16px}
     }
   </style>
 </head>
 <body>
   <header class="header">
-    <div class="container header-box">
-      <a href="/" class="logo-wrap" aria-label="BDB ana sayfa">
-        <img class="logo-image" src="/logo-bdb.png" alt="BDB logo">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="BDB ana sayfa">
+        <img src="/logo-bdb.png" alt="BDB logo">
       </a>
+
       <nav class="nav" aria-label="Ana menü">
         <a href="/">Ana Sayfa</a>
-        <a href="/kurumsal/">Kurumsal</a>
-        <a class="active" href="/urunler/">Ürünler</a>
+        <a href="/urunler/" class="active">Ürünler</a>
+        <a href="/hakkimizda/">Hakkımızda</a>
         <a href="/iletisim/">İletişim</a>
       </nav>
-      <div class="header-note">İzmir merkezli tedarik</div>
+
+      <a href="/iletisim/" class="top-btn">Teklif Al</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-box">
-        <div class="hero-main">
-          <div class="kicker">Ürünler</div>
-          <h1>İşletmeler için ürün gruplarımız</h1>
-          <p>
-            Koruyucu ürünler, ambalaj malzemeleri, sevkiyat ürünleri ve operasyonel sarf
-            ihtiyaçlarında fabrikalara ve işletmelere uygun ürün grupları sunuyoruz.
-            Aşağıdaki liste, çalıştığımız başlıca ürünleri örnek olarak içerir.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="/iletisim/">Teklif Al</a>
-            <a class="button" href="tel:+905327889759">Hemen Ara</a>
-          </div>
-        </div>
+      <div class="container">
+        <div class="hero-box">
+          <div class="hero-grid">
+            <div class="hero-left">
+              <div>
+                <div class="eyebrow">Ürünler</div>
+                <h1>Ürünler.</h1>
+                <p class="hero-sub">Her tür ürün tedariği yapılabilir.</p>
 
-        <div class="hero-side">
-          <div class="hero-card">
-            <h2>Talebe göre ürün ve alternatif sunuyoruz</h2>
-            <p>
-              İhtiyaca göre farklı ürün, ölçü ve kullanım alternatiflerini değerlendirerek
-              teklif sürecini net ve hızlı şekilde yönetiyoruz.
-            </p>
-          </div>
+                <div class="hero-actions">
+                  <a href="/iletisim/" class="btn btn-primary">Teklif Al</a>
+                  <a href="tel:+905327889759" class="btn btn-secondary">Hemen Ara</a>
+                </div>
+              </div>
 
-          <div class="hero-points">
-            <div class="hero-point">
-              <strong>Uygun fiyat</strong>
-              <span>İhtiyaca göre alternatifli teklif yaklaşımı.</span>
+              <div class="hero-bottom">
+                <div>
+                  <strong>Hızlı teklif</strong>
+                  Kısa sürede dönüş
+                </div>
+                <div>
+                  <strong>Net iletişim</strong>
+                  Doğrudan süreç
+                </div>
+                <div>
+                  <strong>Tedarik desteği</strong>
+                  Farklı ürün talepleri
+                </div>
+              </div>
             </div>
-            <div class="hero-point">
-              <strong>Düzenli tedarik</strong>
-              <span>Tekrar eden ürün ihtiyaçlarına uygun çalışma modeli.</span>
-            </div>
-            <div class="hero-point">
-              <strong>Fabrika odaklı</strong>
-              <span>Üretim, paketleme ve sevkiyat süreçlerine uygun ürünler.</span>
-            </div>
-            <div class="hero-point">
-              <strong>Hızlı iletişim</strong>
-              <span>Telefon, WhatsApp ve e-posta üzerinden ulaşılabilir destek.</span>
+
+            <div class="hero-right">
+              <div class="info-block">
+                <span class="info-label">Ürün Grubu</span>
+                <h2 class="info-title">Koruyucu ürünler</h2>
+                <p class="info-text">Farklı kullanım alanlarına uygun ürün talepleri değerlendirilebilir.</p>
+              </div>
+
+              <div class="info-block">
+                <span class="info-label">Ürün Grubu</span>
+                <h2 class="info-title">Ambalaj ve paketleme</h2>
+                <p class="info-text">Paketleme ve sevkiyat süreçlerine uygun ürün talepleri alınabilir.</p>
+              </div>
+
+              <div class="info-block">
+                <span class="info-label">Ürün Grubu</span>
+                <h2 class="info-title">Diğer talepler</h2>
+                <p class="info-text">Belirli bir ürün ihtiyacınız varsa doğrudan iletişime geçebilirsiniz.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container quick-band">
-        <div class="quick-item">
-          <strong>Koruyucu ürünler</strong>
-          <span>Eldiven, bone, maske, kolluk, önlük ve benzeri kullanım ürünleri.</span>
-        </div>
-        <div class="quick-item">
-          <strong>Ambalaj ve paketleme</strong>
-          <span>Koli bandı, streç film, poşet, vakum poşet, köşebent ve koli ürünleri.</span>
-        </div>
-        <div class="quick-item">
-          <strong>Sevkiyat ve destek ürünleri</strong>
-          <span>Palet, jel buz ve operasyon akışını destekleyen yardımcı ürün grupları.</span>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-head">
-          <div class="section-kicker">Ürün Kataloğu</div>
-          <h2 class="section-title">Başlıca ürün gruplarımız</h2>
-          <p class="section-text">
-            Ürün ihtiyaçları firmadan firmaya değişebildiği için aşağıdaki içerik örnek ürünler üzerinden hazırlanmıştır.
-            Belirli ölçü, özellik veya kullanım alanı için bizimle doğrudan iletişime geçebilirsiniz.
-          </p>
-        </div>
-
-        <div class="catalog">
-          <article class="catalog-card">
-            <div class="catalog-head">
-              <div class="catalog-badge">
-                <div class="catalog-no">01</div>
-                <div class="catalog-tag">Koruyucu Ürünler</div>
-              </div>
-              <div class="catalog-intro">
-                <h2>Personel kullanımı ve üretim alanları için koruyucu ürünler</h2>
-                <p>
-                  Üretim, paketleme, hijyen ve günlük kullanım alanlarında ihtiyaç duyulan
-                  temel koruyucu ürünleri tedarik ediyoruz.
-                </p>
-              </div>
-            </div>
-
-            <div class="product-grid">
-              <div class="product-mini">
-                <strong>Tek kullanımlık nitril eldiven</strong>
-                <span>Çeşitli kullanım alanlarına uygun temel koruyucu ürün grubu.</span>
-              </div>
-              <div class="product-mini">
-                <strong>İş eldivenleri</strong>
-                <span>Günlük kullanım ve çalışma ortamına uygun el koruma çözümleri.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Lateks eldiven</strong>
-                <span>İhtiyaca göre değerlendirilebilen koruyucu eldiven seçeneği.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Tek kullanımlık bone</strong>
-                <span>Üretim ve hijyen hassasiyeti olan alanlarda yardımcı kullanım ürünü.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Sakal bonesi</strong>
-                <span>Hijyen gerektiren çalışma alanları için tamamlayıcı ürün.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Tek kullanımlık maske</strong>
-                <span>Farklı kullanım ihtiyaçlarına yönelik temel koruyucu ürünlerden biri.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Tela kolluk</strong>
-                <span>Kol koruması gereken alanlarda tercih edilen yardımcı ürün.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Naylon önlük</strong>
-                <span>Temas ve sıvı koruması gereken kullanım alanları için uygundur.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Çizme galoş</strong>
-                <span>Hijyen ve zemin hassasiyeti olan alanlarda destekleyici kullanım sağlar.</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="catalog-card">
-            <div class="catalog-head">
-              <div class="catalog-badge">
-                <div class="catalog-no">02</div>
-                <div class="catalog-tag">Ambalaj ve Paketleme</div>
-              </div>
-              <div class="catalog-intro">
-                <h2>Paketleme, koruma ve düzenleme için ambalaj ürünleri</h2>
-                <p>
-                  Sevkiyat, koruma, düzenleme ve günlük kullanım için tercih edilen ambalaj
-                  malzemelerini talebe göre değerlendiriyoruz.
-                </p>
-              </div>
-            </div>
-
-            <div class="product-grid">
-              <div class="product-mini">
-                <strong>Koli bandı</strong>
-                <span>Paketleme ve koli kapatma süreçlerinde kullanılan temel ürünlerden biridir.</span>
-              </div>
-              <div class="product-mini">
-                <strong>El tipi streç film</strong>
-                <span>Sarma, koruma ve paket sabitleme amaçlı kullanıma uygundur.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Naylon poşet</strong>
-                <span>Günlük paketleme ve ürün ayırma süreçlerinde tercih edilir.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Vakum poşet</strong>
-                <span>Ürünün korunması ve kapalı paketleme ihtiyaçlarında değerlendirilir.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Karton koli</strong>
-                <span>Sevkiyat ve depolama süreçlerinin temel ambalaj ürünlerinden biridir.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Köşebent</strong>
-                <span>Taşıma ve istifleme sırasında koruma amaçlı kullanılan yardımcı üründür.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Plas kağıt</strong>
-                <span>Talebe göre farklı kullanım alanlarında değerlendirilen yardımcı ambalaj ürünüdür.</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="catalog-card">
-            <div class="catalog-head">
-              <div class="catalog-badge">
-                <div class="catalog-no">03</div>
-                <div class="catalog-tag">Sevkiyat ve Depolama</div>
-              </div>
-              <div class="catalog-intro">
-                <h2>Taşıma, istifleme ve sevkiyat süreçlerini destekleyen ürünler</h2>
-                <p>
-                  Ürünlerin sahada, depoda ve sevkiyat aşamasında daha düzenli ilerlemesini
-                  sağlayan yardımcı ürün gruplarını da sunuyoruz.
-                </p>
-              </div>
-            </div>
-
-            <div class="product-grid">
-              <div class="product-mini">
-                <strong>Ahşap palet</strong>
-                <span>Depolama ve taşıma süreçlerinde kullanılan temel palet seçeneklerinden biridir.</span>
-              </div>
-              <div class="product-mini">
-                <strong>EPAL palet</strong>
-                <span>Standart palet ihtiyacı olan işletmeler için değerlendirilebilir.</span>
-              </div>
-              <div class="product-mini">
-                <strong>Jel buz</strong>
-                <span>Soğuk zincir veya ısı kontrolü gereken kullanım alanlarında destek sağlar.</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container support-layout">
-        <div class="support-card">
-          <div class="section-head">
-            <div class="section-kicker">Teklif Süreci</div>
-            <h2 class="section-title">Ürün talebinizi nasıl değerlendiriyoruz?</h2>
-            <p class="section-text">
-              Belirli bir ürün adı, kullanım alanı ya da düzenli ihtiyaç planınız varsa
-              bize iletmeniz yeterli. Süreci pratik şekilde ilerletiyoruz.
-            </p>
+        <div class="groups-box">
+          <div class="groups-head">
+            <h2 class="section-title">Ana Başlıklar</h2>
+            <div class="section-note">Detaylı ürün listesi yerine genel başlıklar.</div>
           </div>
 
-          <div class="step-list">
-            <div class="step">
-              <div class="step-no">01</div>
-              <div>
-                <h3>İhtiyacınızı alıyoruz</h3>
-                <p>Talep edilen ürün, kullanım alanı ve gerekiyorsa tahmini miktar bilgisi netleştirilir.</p>
-              </div>
+          <div class="groups-grid">
+            <div class="group-item">
+              <span class="group-no">01</span>
+              <h2>Koruyucu Ürünler</h2>
             </div>
 
-            <div class="step">
-              <div class="step-no">02</div>
-              <div>
-                <h3>Uygun ürünleri değerlendiriyoruz</h3>
-                <p>İhtiyacınıza göre uygun ürün veya alternatif seçenekler belirlenir.</p>
-              </div>
+            <div class="group-item">
+              <span class="group-no">02</span>
+              <h2>Ambalaj ve Paketleme</h2>
             </div>
 
-            <div class="step">
-              <div class="step-no">03</div>
-              <div>
-                <h3>Teklif sürecini iletiyoruz</h3>
-                <p>Ürün ve fiyat bilgileri net şekilde paylaşılır, gerekiyorsa ek detaylar birlikte netleştirilir.</p>
-              </div>
+            <div class="group-item">
+              <span class="group-no">03</span>
+              <h2>Sevkiyat ve Depolama</h2>
             </div>
-          </div>
-        </div>
 
-        <aside class="support-note">
-          <h3>Bu sayfa neyi gösteriyor?</h3>
-          <p>
-            Buradaki içerik tüm ürünlerin tam kataloğu değil; çalıştığımız ana ürün gruplarının
-            özet görünümüdür. Belirli marka, ölçü veya özellik ihtiyacınız varsa doğrudan bize iletebilirsiniz.
-          </p>
-          <ul>
-            <li>İhtiyaca göre ürün alternatifi değerlendirilebilir</li>
-            <li>Düzenli sipariş yapısına uygun çalışma mümkündür</li>
-            <li>İzmir ve yakın bölgelere destek verilebilir</li>
-            <li>Telefon, WhatsApp ve e-posta üzerinden hızlı iletişim sağlanır</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2>İhtiyacınız olan ürün için bizimle iletişime geçin</h2>
-            <p>
-              Aradığınız ürünü, kullanım alanını veya düzenli sipariş ihtiyacınızı bize iletin;
-              uygun ürün ve teklif sürecini birlikte netleştirelim.
-            </p>
-          </div>
-          <div class="hero-actions">
-            <a class="button primary" href="tel:+905327889759">Hemen Ara</a>
-            <a class="button" href="https://wa.me/905379956261" target="_blank" rel="noopener">WhatsApp</a>
+            <div class="group-item">
+              <span class="group-no">04</span>
+              <h2>Diğer Ürün Talepleri</h2>
+            </div>
           </div>
         </div>
       </div>
@@ -897,44 +491,9 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-box">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>BDB</h3>
-          <p>
-            BDB, BDB Ticaret tarafından kullanılan marka adıdır. İzmir merkezli olarak
-            koruyucu ürünler, ambalaj malzemeleri ve operasyonel sarf ürünlerinde işletmelere tedarik desteği sunar.
-          </p>
-          <p style="margin-top:12px;">
-            Uygun fiyat, düzenli tedarik ve ulaşılabilir iletişim odaklı çalışıyoruz.
-          </p>
-        </div>
-
-        <div class="footer-column">
-          <strong>Sayfalar</strong>
-          <div class="footer-links">
-            <a href="/">Ana Sayfa</a>
-            <a href="/kurumsal/">Kurumsal</a>
-            <a href="/urunler/">Ürünler</a>
-            <a href="/iletisim/">İletişim</a>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <strong>İletişim</strong>
-          <div class="footer-links">
-            <a href="mailto:info@bdbsource.com.tr">info@bdbsource.com.tr</a>
-            <a href="tel:+905327889759">Telefon: 0532 788 97 59</a>
-            <a href="https://wa.me/905379956261" target="_blank" rel="noopener">WhatsApp: 0537 995 62 61</a>
-            <p>Bölge: İzmir ve yakın çevre</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 bdbsource.com.tr</span>
-        <span>Ürün ve Tedarik Grupları</span>
-      </div>
+    <div class="container footer-inner">
+      <span>© 2026 BDB</span>
+      <span>Tedarik desteği</span>
     </div>
   </footer>
 </body>
