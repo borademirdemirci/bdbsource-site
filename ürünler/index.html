@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BDB | Ürünler</title>
-  <meta name="description" content="BDB, işletmelerin ihtiyaçlarına uygun tedarik çözümleri sunar. Ürün talepleri içerik ve kullanım alanına göre değerlendirilir." />
+  <meta name="description" content="BDB, işletmelerin ihtiyaçlarına uygun tedarik çözümleri sunar. Ürün talepleri kullanım alanına ve sürece göre değerlendirilir." />
 
   <link rel="icon" type="image/png" href="/BDBLOGO.png">
   <link rel="apple-touch-icon" href="/BDBLOGO.png">
@@ -134,7 +134,7 @@
     }
 
     .hero{
-      padding:42px 0 22px;
+      padding:42px 0 18px;
     }
 
     .hero-box{
@@ -175,47 +175,82 @@
       line-height:1.95;
     }
 
-    .content{
-      padding:10px 0 54px;
+    .overview{
+      padding:0 0 26px;
     }
 
-    .content-box{
-      border:1px solid var(--line);
-      border-radius:34px;
-      overflow:hidden;
-      background:#fff;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .product-row{
+    .overview-grid{
       display:grid;
-      grid-template-columns:280px 1fr;
-      gap:30px;
-      padding:34px 38px;
-      border-bottom:1px solid var(--line);
+      grid-template-columns:1fr 1fr;
+      gap:48px;
+      padding:28px 4px 0;
     }
 
-    .product-row:last-child{
-      border-bottom:none;
-    }
-
-    .product-label{
-      font-family:"Montserrat", Arial, sans-serif;
-      font-size:1.02rem;
-      font-weight:800;
-      letter-spacing:.03em;
-      text-transform:uppercase;
-      color:var(--text-strong);
-    }
-
-    .product-text p{
+    .overview-text p{
       margin:0 0 16px;
       color:var(--muted);
       font-size:1rem;
       line-height:1.95;
     }
 
-    .product-text p:last-child{
+    .overview-text p:last-child{
+      margin-bottom:0;
+    }
+
+    .content{
+      padding:0 0 54px;
+    }
+
+    .content-wrap{
+      background:#fff;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-row{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:34px;
+      padding:34px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .section-row:last-child{
+      border-bottom:none;
+    }
+
+    .section-title{
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:1rem;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:var(--text-strong);
+    }
+
+    .section-body p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.95;
+      font-size:1rem;
+    }
+
+    .section-body p:last-child{
+      margin-bottom:0;
+    }
+
+    .section-body ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .section-body li{
+      margin:0 0 10px;
+      line-height:1.9;
+    }
+
+    .section-body li:last-child{
       margin-bottom:0;
     }
 
@@ -224,17 +259,13 @@
     }
 
     .note-box{
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:28px 30px;
-      background:#fff;
-      box-shadow:var(--shadow-soft);
+      padding:0;
     }
 
     .note-box h2{
-      margin:0 0 10px;
+      margin:0 0 12px;
       font-family:"Montserrat", Arial, sans-serif;
-      font-size:1.45rem;
+      font-size:1.55rem;
       line-height:1.08;
       letter-spacing:-.03em;
       text-transform:uppercase;
@@ -243,6 +274,7 @@
 
     .note-box p{
       margin:0;
+      max-width:70ch;
       color:var(--muted);
       line-height:1.9;
     }
@@ -310,9 +342,10 @@
     }
 
     @media (max-width:1040px){
-      .product-row{
+      .overview-grid,
+      .section-row{
         grid-template-columns:1fr;
-        gap:14px;
+        gap:16px;
       }
     }
 
@@ -341,10 +374,9 @@
       .hero-box{
         padding:38px 22px;
       }
-      .product-row{
-        padding:24px 22px;
+      .section-row{
+        padding:24px 0;
       }
-      .note-box,
       .cta-box{
         padding:28px 22px;
       }
@@ -383,84 +415,85 @@
           <div class="eyebrow">BDB TEDARİK</div>
           <h1>ÜRÜNLER</h1>
           <p class="hero-sub">
-            Sabit bir ürün listesi yerine, işletmelerin ihtiyaçlarına göre şekillenen tedarik çözümleri sunuyoruz. Talep edilen ürün grupları kullanım alanına, miktara ve süreç yapısına göre değerlendirilir.
+            Hazır ve sabit bir ürün listesi yerine, işletmelerin ihtiyaçlarına göre şekillenen tedarik çözümleri sunuyoruz. Ürün talepleri kullanım alanı, miktar ve süreç yapısına göre değerlendirilir.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-text">
+            <p>
+              Tedarik süreci, standart bir katalog mantığıyla değil; işletmenin ihtiyacına, kullanım yoğunluğuna ve alım yapısına göre ele alınır.
+            </p>
+            <p>
+              Bu nedenle ürün yaklaşımımız, tek tek sabit kalemlerden çok; ihtiyaç alanlarını doğru belirleyip buna uygun çözüm sunmaya dayanır.
+            </p>
+          </div>
+
+          <div class="overview-text">
+            <p>
+              Farklı sektörlerde kullanılan sarf ürünleri, koruyucu ürünler, ambalaj çözümleri ve yardımcı tedarik kalemleri talepe göre değerlendirilir.
+            </p>
+            <p>
+              Tek seferlik alımlarda da düzenli ihtiyaçlarda da süreç, daha kontrollü ve anlaşılır bir şekilde ilerletilir.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="content">
       <div class="container">
-        <div class="content-box">
-          <div class="product-row">
-            <div class="product-label">Hijyen ve Koruyucu Ürünler</div>
-            <div class="product-text">
+        <div class="content-wrap">
+          <div class="section-row">
+            <div class="section-title">Ürün Grupları</div>
+            <div class="section-body">
               <p>
-                İşletmelerin kullanım alanına göre eldiven, maske, bone, kolluk, önlük, galoş ve benzeri koruyucu ürün gruplarında tedarik desteği sunulabilir.
+                Tedarik sürecinde farklı kullanım alanlarına yönelik genel ürün grupları üzerinden ilerlenir. Bu yapı; koruyucu ürünler, hijyen ve sarf kalemleri, ambalaj ürünleri, etiketleme çözümleri, sevkiyat destek ürünleri ve benzeri işletme ihtiyaçlarını kapsayabilir.
               </p>
               <p>
-                Ürün seçimi, kullanım yoğunluğu ve ihtiyaç detayına göre değerlendirilerek uygun süreç oluşturulur.
-              </p>
-            </div>
-          </div>
-
-          <div class="product-row">
-            <div class="product-label">Ambalaj ve Paketleme Ürünleri</div>
-            <div class="product-text">
-              <p>
-                Koli bandı, streç film, iç poşet, vakum poşeti, esnek ambalaj ve benzeri paketleme ihtiyaçları; talebin içeriğine göre ele alınır.
-              </p>
-              <p>
-                Ambalaj sürecinde kullanılan ürünler, kullanım alanı ve operasyon yapısına uygun şekilde değerlendirilir.
+                Talep edilen ürünün niteliğine göre süreç yeniden şekillendirilir ve ihtiyaç yapısına uygun yönlendirme yapılır.
               </p>
             </div>
           </div>
 
-          <div class="product-row">
-            <div class="product-label">Karton ve Etiketleme Çözümleri</div>
-            <div class="product-text">
+          <div class="section-row">
+            <div class="section-title">Değerlendirme</div>
+            <div class="section-body">
               <p>
-                Karton koli, etiket ve benzeri yardımcı ürün gruplarında; ölçü, kullanım amacı ve sipariş yapısına göre tedarik desteği sağlanabilir.
+                Her ürün talebi aynı yapıda olmadığı için değerlendirme; kullanım amacı, istenen ölçü veya teknik detay, miktar ve sipariş düzenine göre yapılır.
               </p>
               <p>
-                Bu grup özellikle sevkiyat, paketleme ve ürün düzeni gerektiren süreçlerde ihtiyaç doğrultusunda planlanır.
-              </p>
-            </div>
-          </div>
-
-          <div class="product-row">
-            <div class="product-label">Sevkiyat ve Depolama Ürünleri</div>
-            <div class="product-text">
-              <p>
-                Palet, köşebent ve benzeri sevkiyat destek ürünleri; taşıma ve depolama sürecinin gerekliliklerine göre değerlendirilir.
-              </p>
-              <p>
-                Süreç, ürünün kullanım şekline ve sevkiyat yapısına uygun olacak şekilde yönlendirilir.
+                Böylece yalnızca ürünün kendisi değil, o ürünün nasıl ve hangi sıklıkla kullanılacağı da sürecin bir parçası olarak ele alınır.
               </p>
             </div>
           </div>
 
-          <div class="product-row">
-            <div class="product-label">Sarf ve İşletme İhtiyaçları</div>
-            <div class="product-text">
+          <div class="section-row">
+            <div class="section-title">Tedarik Yapısı</div>
+            <div class="section-body">
               <p>
-                İşletmelerin günlük kullanımında yer alan farklı sarf ve yardımcı ürün grupları için de talebe bağlı tedarik desteği sunulur.
+                Çalışma yapımız hazır stok mantığından çok, talep odaklı tedarik anlayışına dayanır. Bu yaklaşım, işletmeye göre şekillenen daha esnek ve daha doğru bir süreç kurulmasına imkan verir.
               </p>
               <p>
-                Tek seferlik ihtiyaçlarda da düzenli alımlarda da süreç, ihtiyaca göre şekillendirilir.
+                İhtiyaç duyulan ürün grupları paylaşıldığında, buna uygun içerik ve süreç yapısı üzerinden değerlendirme yapılır.
               </p>
             </div>
           </div>
 
-          <div class="product-row">
-            <div class="product-label">Talebe Göre Tedarik</div>
-            <div class="product-text">
-              <p>
-                Ürün yapısı sabit bir listeyle sınırlı değildir. İhtiyaç duyulan ürün grupları, miktar ve kullanım detayları paylaşıldığında buna uygun değerlendirme yapılır.
-              </p>
-              <p>
-                Böylece hazır stok mantığından ziyade, işletmeye uygun ve talep odaklı bir tedarik süreci yürütülür.
-              </p>
+          <div class="section-row">
+            <div class="section-title">Kapsam</div>
+            <div class="section-body">
+              <ul>
+                <li>Koruyucu ve hijyen amaçlı kullanım ürünleri</li>
+                <li>Ambalaj, paketleme ve yardımcı sarf kalemleri</li>
+                <li>Sevkiyat ve depolama sürecinde kullanılan destek ürünleri</li>
+                <li>Etiketleme, düzenleme ve işletme içi yardımcı ürün ihtiyaçları</li>
+                <li>Tek seferlik veya devam eden alım yapısına uygun tedarik talepleri</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -472,7 +505,7 @@
         <div class="note-box">
           <h2>Ürün Talebi</h2>
           <p>
-            Talep ettiğiniz ürün gruplarını bizimle paylaşabilirsiniz. İhtiyaç detaylarına göre uygun tedarik süreci değerlendirilerek dönüş sağlanır.
+            İhtiyaç duyduğunuz ürün grubunu ve kullanım detaylarını bizimle paylaşabilirsiniz. Talebiniz içeriğine göre değerlendirilerek uygun tedarik süreci hakkında dönüş sağlanır.
           </p>
         </div>
       </div>
