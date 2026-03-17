@@ -1,25 +1,471 @@
-<div class="eyebrow">BDB TEDARİK</div>
-<h1>İHTİYACINIZ OLAN ÜRÜNLER İÇİN DOĞRU VE DÜZENLİ TEDARİK</h1>
-<p class="hero-sub">
-  İşletmelerin ürün ihtiyaçlarında hızlı dönüş, açık iletişim ve düzenli takip sunuyoruz.
-</p>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BDB | Tedarik Desteği</title>
+  <meta name="description" content="BDB, işletmeler için güvenilir ve düzenli tedarik desteği sunar." />
 
-<div class="hero-actions">
-  <a href="/urunler/" class="btn btn-primary">ÜRÜNLER</a>
-  <a href="/iletisim/" class="btn btn-secondary">İLETİŞİM</a>
-</div>
+  <link rel="icon" type="image/png" href="/BDBLOGO.png">
+  <link rel="apple-touch-icon" href="/BDBLOGO.png">
 
-<div class="hero-points">
-  <div class="point">
-    <strong>HIZLI DÖNÜŞ</strong>
-    <span>Talebinize kısa sürede geri dönüş sağlanır.</span>
-  </div>
-  <div class="point">
-    <strong>AÇIK İLETİŞİM</strong>
-    <span>Süreç boyunca net ve doğrudan iletişim kurulur.</span>
-  </div>
-  <div class="point">
-    <strong>DÜZENLİ TAKİP</strong>
-    <span>İhtiyaçlar planlı şekilde ele alınır ve takip edilir.</span>
-  </div>
-</div>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --bg-soft:#f6f8fc;
+      --panel:#ffffff;
+      --text:#233a63;
+      --text-strong:#162947;
+      --muted:#6a7890;
+      --line:#dbe3ee;
+      --line-soft:#cdd7e5;
+      --navy:#2d436c;
+      --navy-soft:#395683;
+      --green:#9fbe77;
+      --green-deep:#86a75f;
+      --shadow:0 18px 40px rgba(27,44,74,.08);
+      --shadow-soft:0 10px 25px rgba(27,44,74,.05);
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:"Inter", Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(159,190,119,.10), transparent 18%),
+        radial-gradient(circle at left top, rgba(45,67,108,.06), transparent 20%),
+        linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    .container{width:min(100% - 32px, var(--max));margin:0 auto}
+
+    .header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(45,67,108,.10);
+    }
+
+    .header-inner{
+      min-height:104px;
+      display:grid;
+      grid-template-columns:280px 1fr 190px;
+      gap:20px;
+      align-items:center;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      min-height:78px;
+    }
+
+    .logo img{
+      height:104px;
+      width:auto;
+      object-fit:contain;
+    }
+
+    .nav{
+      display:flex;
+      justify-content:center;
+      gap:38px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:1.18rem;
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      color:var(--muted);
+      position:relative;
+      transition:.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active{
+      color:var(--navy);
+    }
+
+    .nav a.active::after,
+    .nav a:hover::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-12px;
+      width:100%;
+      height:3px;
+      border-radius:999px;
+      background:var(--green);
+    }
+
+    .top-btn{
+      justify-self:end;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--navy-soft),var(--navy));
+      color:#fff;
+      font-size:.96rem;
+      font-weight:800;
+      text-transform:uppercase;
+      box-shadow:var(--shadow-soft);
+      transition:.2s ease;
+    }
+
+    .top-btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .hero{
+      padding:36px 0 42px;
+    }
+
+    .hero-box{
+      border:1px solid var(--line);
+      border-radius:34px;
+      overflow:hidden;
+      background:
+        linear-gradient(135deg, rgba(45,67,108,.04), transparent 32%),
+        linear-gradient(180deg,#ffffff 0%, #f8fbff 100%);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      min-height:620px;
+    }
+
+    .hero-left{
+      padding:72px 58px 54px;
+      border-right:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .eyebrow{
+      color:var(--green-deep);
+      font-size:.84rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0;
+      max-width:10ch;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:clamp(3.2rem,5.8vw,5.8rem);
+      line-height:.94;
+      letter-spacing:-.04em;
+      text-transform:uppercase;
+      color:var(--text-strong);
+    }
+
+    .hero-sub{
+      margin:20px 0 0;
+      max-width:34ch;
+      color:var(--muted);
+      font-size:1.05rem;
+      line-height:1.85;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:32px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:180px;
+      min-height:56px;
+      padding:0 20px;
+      border-radius:14px;
+      font-size:.96rem;
+      font-weight:800;
+      text-transform:uppercase;
+      transition:.2s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--navy-soft),var(--navy));
+      color:#fff;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--line-soft);
+      color:var(--navy);
+      background:#fff;
+    }
+
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      padding-top:24px;
+      border-top:1px solid var(--line);
+    }
+
+    .point{
+      padding:20px 18px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#fff;
+    }
+
+    .point strong{
+      display:block;
+      margin-bottom:8px;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:.95rem;
+      color:var(--text-strong);
+      text-transform:uppercase;
+    }
+
+    .point span{
+      color:var(--muted);
+      font-size:.94rem;
+      line-height:1.7;
+    }
+
+    .hero-right{
+      display:grid;
+      grid-template-rows:repeat(3,1fr);
+      background:var(--bg-soft);
+    }
+
+    .link-block{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:20px;
+      padding:34px;
+      border-bottom:1px solid var(--line);
+      transition:.2s ease;
+      background:linear-gradient(180deg, rgba(255,255,255,.70), rgba(248,251,255,.95));
+    }
+
+    .link-block:last-child{
+      border-bottom:none;
+    }
+
+    .link-block:hover{
+      background:
+        linear-gradient(90deg, rgba(159,190,119,.14), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,.95), rgba(247,251,255,1));
+    }
+
+    .link-label{
+      display:block;
+      margin-bottom:10px;
+      color:var(--green-deep);
+      font-size:.8rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .link-title{
+      margin:0;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:1.7rem;
+      line-height:1.05;
+      letter-spacing:-.03em;
+      text-transform:uppercase;
+      color:var(--text-strong);
+    }
+
+    .link-arrow{
+      flex:0 0 auto;
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      border:1px solid var(--line-soft);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--green-deep);
+      font-size:1.1rem;
+      background:#fff;
+    }
+
+    .footer{
+      padding:20px 0 34px;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      padding-top:20px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    @media (max-width:1040px){
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-left{
+        border-right:none;
+        border-bottom:1px solid var(--line);
+      }
+    }
+
+    @media (max-width:880px){
+      .header-inner{
+        grid-template-columns:1fr;
+        justify-items:center;
+        padding:14px 0;
+      }
+
+      .top-btn{
+        justify-self:center;
+      }
+
+      .hero-points{
+        grid-template-columns:1fr;
+      }
+
+      .logo img{
+        height:88px;
+      }
+
+      .nav a{
+        font-size:1.05rem;
+      }
+    }
+
+    @media (max-width:720px){
+      .header{position:static}
+      .hero-left{padding:38px 22px}
+      .link-block{padding:24px 22px}
+      h1{max-width:11ch}
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="BDB ana sayfa">
+        <img src="/BDBLOGO.png" alt="BDB logo">
+      </a>
+
+      <nav class="nav" aria-label="Ana menü">
+        <a href="/" class="active">ANA SAYFA</a>
+        <a href="/urunler/">ÜRÜNLER</a>
+        <a href="/hakkimizda/">HAKKIMIZDA</a>
+        <a href="/iletisim/">İLETİŞİM</a>
+      </nav>
+
+      <a href="/iletisim/" class="top-btn">TEKLİF AL</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-box">
+          <div class="hero-grid">
+            <div class="hero-left">
+              <div>
+                <div class="eyebrow">BDB TEDARİK</div>
+                <h1>İŞLETMELER İÇİN DÜZENLİ TEDARİK DESTEĞİ</h1>
+                <p class="hero-sub">
+                  Ürün ihtiyacınızda hızlı dönüş, net iletişim ve düzenli takip sunuyoruz.
+                </p>
+
+                <div class="hero-actions">
+                  <a href="/urunler/" class="btn btn-primary">ÜRÜNLER</a>
+                  <a href="/iletisim/" class="btn btn-secondary">İLETİŞİM</a>
+                </div>
+              </div>
+
+              <div class="hero-points">
+                <div class="point">
+                  <strong>HIZLI TEKLİF</strong>
+                  <span>Talebe göre kısa sürede dönüş yapılır.</span>
+                </div>
+                <div class="point">
+                  <strong>NET SÜREÇ</strong>
+                  <span>İletişim ve yönlendirme açık şekilde ilerler.</span>
+                </div>
+                <div class="point">
+                  <strong>DÜZENLİ DESTEK</strong>
+                  <span>Tek seferlik ve düzenli ihtiyaçlarınızda destek sağlanır.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-right">
+              <a href="/urunler/" class="link-block">
+                <div>
+                  <span class="link-label">01</span>
+                  <h2 class="link-title">ÜRÜNLER</h2>
+                </div>
+                <div class="link-arrow">→</div>
+              </a>
+
+              <a href="/hakkimizda/" class="link-block">
+                <div>
+                  <span class="link-label">02</span>
+                  <h2 class="link-title">HAKKIMIZDA</h2>
+                </div>
+                <div class="link-arrow">→</div>
+              </a>
+
+              <a href="/iletisim/" class="link-block">
+                <div>
+                  <span class="link-label">03</span>
+                  <h2 class="link-title">İLETİŞİM</h2>
+                </div>
+                <div class="link-arrow">→</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 BDB</span>
+      <span>TEDARİK DESTEĞİ</span>
+    </div>
+  </footer>
+</body>
+</html>
