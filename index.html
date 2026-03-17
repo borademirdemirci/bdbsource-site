@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>BDB | Tedarik Desteği</title>
-  <meta name="description" content="BDB, işletmeler için sade, net ve düzenli tedarik desteği sunar.">
+  <meta name="description" content="BDB, işletmeler için hızlı teklif ve düzenli tedarik desteği sunar.">
 
   <link rel="icon" type="image/x-icon" href="/favicon-logo-only.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-logo-only.png">
@@ -13,51 +13,46 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0d0f11;
-      --bg-2:#131619;
-      --panel:#171b1f;
-      --line:#252b31;
-      --line-soft:#1d2227;
+      --bg:#111315;
+      --bg-2:#171a1d;
+      --surface:#1d2125;
+      --line:#2b3137;
       --text:#f3f5f7;
-      --muted:#98a2ad;
-      --soft:#c8d0d8;
-      --accent:#d9dde1;
-      --max:1320px;
+      --muted:#a7afb7;
+      --max:1180px;
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family:"Inter", Arial, sans-serif;
       color:var(--text);
-      background:
-        linear-gradient(180deg, #0d0f11 0%, #111417 100%);
+      background:linear-gradient(180deg,var(--bg) 0%, var(--bg-2) 100%);
     }
 
     a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
-    .container{width:min(100% - 40px, var(--max));margin:0 auto}
+    img{max-width:100%;display:block}
+    .container{width:min(100% - 32px, var(--max));margin:0 auto}
 
-    .topbar{
+    .header{
       position:sticky;
       top:0;
-      z-index:100;
-      border-bottom:1px solid rgba(255,255,255,.05);
-      background:rgba(13,15,17,.78);
-      backdrop-filter:blur(12px);
+      z-index:20;
+      background:rgba(17,19,21,.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.04);
     }
 
-    .topbar-inner{
+    .header-inner{
       min-height:82px;
       display:grid;
-      grid-template-columns:220px 1fr 180px;
+      grid-template-columns:220px 1fr 160px;
+      gap:18px;
       align-items:center;
-      gap:20px;
     }
 
     .logo{
@@ -67,7 +62,7 @@
     }
 
     .logo img{
-      height:68px;
+      height:70px;
       width:auto;
       object-fit:contain;
     }
@@ -75,7 +70,7 @@
     .nav{
       display:flex;
       justify-content:center;
-      gap:26px;
+      gap:24px;
       flex-wrap:wrap;
     }
 
@@ -83,129 +78,86 @@
       color:var(--muted);
       font-size:.95rem;
       font-weight:600;
-      letter-spacing:.01em;
-      transition:.2s ease;
-      position:relative;
-    }
-
-    .nav a:after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-8px;
-      width:0;
-      height:1px;
-      background:var(--text);
       transition:.2s ease;
     }
 
-    .nav a:hover{
-      color:var(--text);
-    }
-
-    .nav a:hover:after,
-    .nav a.active:after{
-      width:100%;
-    }
-
+    .nav a:hover,
     .nav a.active{
       color:var(--text);
     }
 
-    .top-action{
+    .cta-top{
       justify-self:end;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width:130px;
       min-height:46px;
       padding:0 18px;
-      border:1px solid var(--text);
-      color:var(--bg);
+      border-radius:12px;
       background:var(--text);
-      font-weight:700;
+      color:var(--bg);
       font-size:.92rem;
-      transition:.2s ease;
-    }
-
-    .top-action:hover{
-      background:transparent;
-      color:var(--text);
-    }
-
-    .hero{
-      padding:0;
-      border-bottom:1px solid var(--line);
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      min-height:calc(100vh - 83px);
-    }
-
-    .hero-left{
-      padding:72px 56px 56px 0;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      border-right:1px solid var(--line);
-    }
-
-    .eyebrow{
-      font-family:"IBM Plex Mono", monospace;
-      color:var(--muted);
-      font-size:.78rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      margin-bottom:26px;
-    }
-
-    h1{
-      margin:0;
-      max-width:10ch;
-      font-size:clamp(3.2rem, 7vw, 7rem);
-      line-height:.92;
-      letter-spacing:-.07em;
       font-weight:800;
     }
 
-    .hero-text{
-      margin-top:28px;
-      max-width:58ch;
-      color:var(--soft);
-      font-size:1.06rem;
-      line-height:1.9;
+    .hero{
+      padding:36px 0 28px;
     }
 
-    .hero-actions{
+    .hero-box{
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:72px 56px;
+      background:linear-gradient(135deg,#17191c 0%, #111315 100%);
+    }
+
+    .eyebrow{
+      margin-bottom:18px;
+      color:var(--muted);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:0 0 18px;
+      max-width:10ch;
+      font-size:clamp(3rem,6vw,5.4rem);
+      line-height:.95;
+      letter-spacing:-.06em;
+    }
+
+    .hero p{
+      margin:0;
+      max-width:48ch;
+      color:var(--muted);
+      font-size:1.04rem;
+      line-height:1.85;
+    }
+
+    .actions{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
-      margin-top:34px;
+      margin-top:28px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width:164px;
+      min-width:160px;
       min-height:52px;
       padding:0 20px;
-      font-size:.93rem;
-      font-weight:700;
-      transition:.2s ease;
+      border-radius:14px;
+      font-size:.94rem;
+      font-weight:800;
     }
 
     .btn-primary{
       background:var(--text);
       color:var(--bg);
-      border:1px solid var(--text);
-    }
-
-    .btn-primary:hover{
-      background:transparent;
-      color:var(--text);
     }
 
     .btn-secondary{
@@ -214,239 +166,75 @@
       background:transparent;
     }
 
-    .btn-secondary:hover{
-      border-color:var(--text);
+    .band{
+      padding:0 0 28px;
     }
 
-    .hero-note{
-      padding-top:28px;
-      border-top:1px solid var(--line);
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-    }
-
-    .hero-note div{
-      max-width:220px;
-    }
-
-    .hero-note strong{
-      display:block;
-      margin-bottom:8px;
-      font-size:.92rem;
-      font-weight:700;
-      color:var(--text);
-    }
-
-    .hero-note span{
-      display:block;
-      color:var(--muted);
-      font-size:.9rem;
-      line-height:1.7;
-    }
-
-    .hero-right{
-      padding:72px 0 56px 56px;
+    .band-box{
       display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-    }
-
-    .hero-block{
-      padding-bottom:24px;
+      gap:18px;
+      flex-wrap:wrap;
+      padding:18px 0;
+      border-top:1px solid var(--line);
       border-bottom:1px solid var(--line);
-    }
-
-    .hero-block:last-child{
-      border-bottom:none;
-      padding-bottom:0;
-    }
-
-    .hero-label{
-      display:block;
-      margin-bottom:18px;
-      font-family:"IBM Plex Mono", monospace;
-      font-size:.76rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
       color:var(--muted);
-    }
-
-    .hero-block p{
-      margin:0;
-      color:var(--soft);
-      font-size:1rem;
-      line-height:1.9;
-      max-width:48ch;
-    }
-
-    .hero-big{
-      font-size:clamp(1.6rem, 2.7vw, 2.6rem);
-      line-height:1.22;
-      letter-spacing:-.03em;
-      max-width:16ch;
-      margin:0;
-      color:var(--text);
-      font-weight:600;
+      font-size:.95rem;
     }
 
     .section{
-      padding:80px 0;
-      border-bottom:1px solid var(--line);
+      padding:28px 0 42px;
     }
 
-    .section-grid{
-      display:grid;
-      grid-template-columns:280px 1fr;
-      gap:36px;
+    .info{
+      max-width:760px;
     }
 
-    .section-side{
-      padding-top:6px;
+    .info h2{
+      margin:0 0 12px;
+      font-size:clamp(1.8rem,3vw,2.6rem);
+      line-height:1.08;
+      letter-spacing:-.04em;
     }
 
-    .section-kicker{
-      font-family:"IBM Plex Mono", monospace;
-      font-size:.78rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .section-main h2{
-      margin:0 0 18px;
-      max-width:18ch;
-      font-size:clamp(2rem, 4vw, 3.4rem);
-      line-height:1.04;
-      letter-spacing:-.05em;
-    }
-
-    .section-main > p{
-      margin:0;
-      max-width:70ch;
-      color:var(--soft);
-      line-height:1.95;
-      font-size:1.02rem;
-    }
-
-    .statement-lines{
-      margin-top:42px;
-      border-top:1px solid var(--line);
-    }
-
-    .statement-row{
-      display:grid;
-      grid-template-columns:220px 1fr;
-      gap:24px;
-      padding:22px 0;
-      border-bottom:1px solid var(--line);
-    }
-
-    .statement-row strong{
-      display:block;
-      color:var(--text);
-      font-weight:700;
-      font-size:.98rem;
-    }
-
-    .statement-row p{
+    .info p{
       margin:0;
       color:var(--muted);
       line-height:1.9;
-      font-size:.98rem;
-    }
-
-    .quote-band{
-      padding:34px 0;
-      border-bottom:1px solid var(--line);
-      border-top:1px solid var(--line);
-      overflow:hidden;
-      white-space:nowrap;
-    }
-
-    .quote-track{
-      display:inline-block;
-      min-width:100%;
-      font-size:clamp(1.4rem, 2.2vw, 2rem);
-      letter-spacing:-.03em;
-      color:#d9dde1;
-    }
-
-    .quote-track span{
-      color:var(--muted);
-      margin:0 18px;
+      font-size:1rem;
     }
 
     .footer{
-      padding:30px 0;
+      padding:28px 0;
+      border-top:1px solid var(--line);
     }
 
     .footer-inner{
       display:flex;
       justify-content:space-between;
-      gap:16px;
+      gap:12px;
       flex-wrap:wrap;
       color:var(--muted);
       font-size:.92rem;
     }
 
-    @media (max-width:1080px){
-      .hero-grid,
-      .section-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-left{
-        padding:48px 0 34px 0;
-        border-right:none;
-        border-bottom:1px solid var(--line);
-      }
-
-      .hero-right{
-        padding:34px 0 48px 0;
-        gap:34px;
-      }
-    }
-
-    @media (max-width:920px){
-      .topbar-inner{
+    @media (max-width:900px){
+      .header-inner{
         grid-template-columns:1fr;
         justify-items:center;
-        padding:16px 0;
-      }
-
-      .top-action{
-        justify-self:center;
-      }
-
-      .section-main h2{
-        max-width:none;
+        padding:14px 0;
       }
     }
 
-    @media (max-width:760px){
-      .topbar{
-        position:static;
-      }
-
-      .hero-note{
-        grid-template-columns:1fr;
-      }
-
-      .statement-row{
-        grid-template-columns:1fr;
-        gap:10px;
-      }
-
-      h1{
-        max-width:12ch;
-      }
+    @media (max-width:720px){
+      .header{position:static}
+      .hero-box{padding:40px 24px}
+      h1{max-width:12ch}
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
+  <header class="header">
+    <div class="container header-inner">
       <a href="/" class="logo" aria-label="BDB ana sayfa">
         <img src="/logo-bdb.png" alt="BDB logo">
       </a>
@@ -458,112 +246,46 @@
         <a href="/iletisim/">İletişim</a>
       </nav>
 
-      <a href="/iletisim/" class="top-action">Teklif Al</a>
+      <a href="/iletisim/" class="cta-top">Teklif Al</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <div>
-            <div class="eyebrow">BDB / Tedarik Desteği</div>
+      <div class="container">
+        <div class="hero-box">
+          <div class="eyebrow">BDB Tedarik</div>
+          <h1>İşletmeler için tedarik desteği.</h1>
+          <p>
+            İhtiyaç duyduğunuz ürünler için hızlı teklif, net iletişim ve düzenli tedarik desteği sunuyoruz.
+          </p>
 
-            <h1>İhtiyacınıza uygun tedarik desteği.</h1>
-
-            <p class="hero-text">
-              BDB, işletmelerin ihtiyaç duyduğu ürünlerde hızlı teklif, net iletişim ve düzenli
-              tedarik desteği sunar. Amaç, süreci gereksiz kalabalık olmadan, daha sakin ve daha
-              güven veren bir yapıda ilerletmektir.
-            </p>
-
-            <div class="hero-actions">
-              <a href="/iletisim/" class="btn btn-primary">İletişime Geç</a>
-              <a href="/kurumsal/" class="btn btn-secondary">Kurumsal Bilgi</a>
-            </div>
-          </div>
-
-          <div class="hero-note">
-            <div>
-              <strong>Hızlı teklif</strong>
-              <span>Taleplere mümkün olduğunca kısa sürede dönüş yapılır.</span>
-            </div>
-            <div>
-              <strong>Net iletişim</strong>
-              <span>Süreç boyunca sade ve anlaşılır bir iletişim tercih edilir.</span>
-            </div>
-            <div>
-              <strong>Düzenli destek</strong>
-              <span>Tek seferlik ve tekrar eden ihtiyaçlarda sürdürülebilir destek sunulur.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="hero-block">
-            <span class="hero-label">Yaklaşım</span>
-            <p class="hero-big">Daha az gürültü, daha net bir yapı.</p>
-          </div>
-
-          <div class="hero-block">
-            <span class="hero-label">Kısa açıklama</span>
-            <p>
-              Bu ana sayfa her şeyi anlatmak için değil, firmanın ne yaptığını kısa ve düzgün
-              biçimde göstermek için tasarlandı. Ürün detayları ve iletişim bilgileri ilgili
-              sayfalarda devam eder.
-            </p>
-          </div>
-
-          <div class="hero-block">
-            <span class="hero-label">İzlenim</span>
-            <p>
-              Daha ağırbaşlı, daha temiz ve daha kontrollü bir görünüm; küçük ama ciddi çalışan
-              bir firma hissi oluşturur.
-            </p>
+          <div class="actions">
+            <a href="/iletisim/" class="btn btn-primary">İletişime Geç</a>
+            <a href="/urunler/" class="btn btn-secondary">Ürünler</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="quote-band">
+    <section class="band">
       <div class="container">
-        <div class="quote-track">
-          tedarik desteği <span>/</span> net iletişim <span>/</span> sade yapı <span>/</span> düzenli süreç <span>/</span> tedarik desteği
+        <div class="band-box">
+          <span>Hızlı teklif</span>
+          <span>Net iletişim</span>
+          <span>Düzenli tedarik</span>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container section-grid">
-        <div class="section-side">
-          <div class="section-kicker">Hakkımızda</div>
-        </div>
-
-        <div class="section-main">
-          <h2>Gösterişli değil, düzgün duran bir anlatım.</h2>
+      <div class="container">
+        <div class="info">
+          <h2>Kısa ve net</h2>
           <p>
-            BDB, işletmelerin ihtiyaç duyduğu ürünlerde tedarik desteği sunan bir yapıdır.
-            Teklif, ürün yönlendirmesi ve tedarik organizasyonu gibi konularda pratik destek sağlar.
-            Ana amaç, ihtiyaç duyulan sürecin daha hızlı, daha net ve daha düzenli ilerlemesine
-            yardımcı olmaktır.
+            BDB, işletmelerin ürün ihtiyaçlarında teklif ve tedarik sürecine destek verir.
+            Detaylı bilgi için ürünler ve iletişim sayfalarını inceleyebilirsiniz.
           </p>
-
-          <div class="statement-lines">
-            <div class="statement-row">
-              <strong>Pratik ilerleme</strong>
-              <p>Süreç gereksiz detaylarla uzatılmadan, talebe odaklı şekilde ilerletilir.</p>
-            </div>
-
-            <div class="statement-row">
-              <strong>Açık iletişim</strong>
-              <p>Karşı tarafta soru işareti bırakmayan, sade ve doğrudan bir iletişim tercih edilir.</p>
-            </div>
-
-            <div class="statement-row">
-              <strong>Düzenli çalışma</strong>
-              <p>Tekrar eden ihtiyaçlarda daha sürdürülebilir bir iş akışı oluşturulmasına destek olunur.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
